@@ -1,0 +1,498 @@
+//合同详情 
+#electronicContract{
+    width: 100%;
+    .electronicContract{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 1.1891891891891893rem;
+        bottom: 1.3513513513513513rem;
+        background: #FFF;
+        .contract{
+            width: 100%;
+            height: 100%;
+            img{
+                width:100%;
+                height: 100%;
+            }
+       }
+        .contractBottom{
+            height: 1.3513513513513513rem;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            border-top: 1px solid #CCC;
+            background: #FFF;
+            li{
+                width: 50%;
+                float: left;
+                display: block;
+                text-align: center;
+                line-height: 1.3513513513513513rem;
+           }
+            li:nth-child(1){
+                .cf6;
+                .fs16;
+           }
+            li:nth-child(2){
+                .cf0;
+                .fs16;
+                background: #fabc7a;
+           }
+       }
+   }
+}
+//身份认证 
+#identitySelect{
+    .identitySelect{
+        margin: 1.1891891891891893rem auto;
+        width: 3.7837837837837838rem;
+        .personage{
+            margin: 2.7027027027027026rem auto;
+            width: 3.2432432432432434rem;
+            height: 3.918918918918919rem;
+       }
+        .enterprise{
+            margin: 1.6216216216216217rem auto;
+            width: 3.2432432432432434rem;
+            height: 3.918918918918919rem;
+       }
+        div{
+            img{
+                width: 2.972972972972973rem;
+                height: 2.972972972972973rem;
+                display: block;
+                margin: 0 auto;
+           }
+            span{
+                .bg-image('../../assets/images/electronicContract/identityNo');
+                display: block;
+                font-size: 0.40540540540540543rem;
+                padding-left: 0.7027027027027027rem;
+                margin-top: 0.40540540540540543rem;
+                background-size: 0.4864864864864865rem 0.4864864864864865rem;
+                background-position: 0.08108108108108109rem 0rem;
+                height: 0.5945945945945946rem;
+                line-height: 0.4594594594594595rem;
+           }
+            .active, .actives{
+                .bg-image('../../assets/images/electronicContract/identitySelect');
+           }
+       }
+        .nextStep{
+            width: 3.7837837837837838rem;
+            height: 1.027027027027027rem;
+            line-height: 1.027027027027027rem;
+            text-align: center;
+            background-color: #fabc7a;
+            border-radius: 0.5135135135135135rem;
+            margin-top: 2.2162162162162162rem;
+            .cf0;
+            .fs15;
+       }
+   }
+}
+//个人实名认证 
+#personageRZ{
+    .personageRZ{
+        margin-top: 1.5135135135135136rem;
+        width: 100%;
+        background: #FFF;
+        overflow: auto;
+        .personageContent{
+            margin-bottom: 1.3513513513513513rem;
+            padding: 0 0.32432432432432434rem 0.2702702702702703rem 0.32432432432432434rem;
+            ul{
+                li{
+                    min-height: 1.3513513513513513rem;
+                    line-height: 1.3513513513513513rem;
+                    border-bottom: 1px solid #ebe5e1;
+                    display: flex;
+                    span{
+                        display: block;
+                        float: left;
+                   }
+                    span:nth-child(1){
+                        font-size: 0.43243243243243246rem;
+                        .cf802;
+                   }
+                    span:nth-child(2){
+                        font-size: 0.43243243243243246rem;
+                        padding-left: 0.05405405405405406rem;
+                        width: 2.8378378378378377rem;
+                   }
+                    .getCodeInput{
+                        // width: 2.7027027027027026rem;
+                        .textIndex1(2.7027027027027026rem);
+                   }
+                    .getCode{
+                        float: right;
+                        font-size: 0.35135135135135137rem;
+                        color: #30a1f8;
+                   }
+                    input{
+                        flex: 1;
+                        font-size: 0.40540540540540543rem;
+                   }
+               }
+                li:nth-last-child(1){
+                    border-bottom: none;
+               }
+           }
+            .identityCardZ,.identityCardF{
+                width: 6.486486486486487rem;
+                height: 4.324324324324325rem;
+                margin: 0 auto;
+                div{
+                    width: 100%;
+                    height: 3.6486486486486487rem;
+                    background: #f5f5f5;
+                    background-size: 1.4864864864864864rem 1rem;
+                    background-position: 50% center;
+                    input{
+                        width: 100%;
+                        height: 3.6486486486486487rem;
+                        border: none;
+                        background: transparent;
+                        opacity: 0;
+                        position: absolute;
+                        z-index: 99;
+                        top: 0;
+                   }
+               }
+                span{
+                    text-align: center;
+                    color: #999;
+                    line-height: 1.135135135135135rem;
+                    display: block;
+               }
+           }
+            .identityCardZ{
+                .identityCardZ-file{
+                    .bg-image('../../assets/images/electronicContract/identity');
+                    position: relative;
+                    .picture{
+                        width: 6.486486486486487rem;
+                        height: 3.6486486486486487rem;
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                   }
+               }
+           }
+            .identityCardF{
+                margin-top: 0.5675675675675675rem;
+                .identityCardZ-file{
+                    .bg-image('../../assets/images/electronicContract/identityBg');
+                    position: relative;
+                    .picture{
+                        width: 6.486486486486487rem;
+                        height: 3.6486486486486487rem;
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                   }
+               }
+           }
+       }
+   }
+    .contractBottom{
+        height: 1.3513513513513513rem;
+        line-height: 1.3513513513513513rem;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        border-top: 1px solid #CCC;
+        background: #fabc7a;
+        font-size: 0.43243243243243246rem;
+        text-align: center;
+        color: #fff;
+   }
+    .shadeN{
+        display: none;
+   }
+    .shade{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: block;
+        top: 0;
+        z-index: 999;
+        background: rgba(0,0,0,0.4);
+        .shadeC{
+            width: 8.108108108108109rem;
+            height: 5.675675675675675rem;
+            margin: 55% auto;
+            background: #fff;
+            border-radius: 0.10810810810810811rem;
+            span{
+                display: block;
+                color: #333;
+                font-weight: 600;
+                text-align: center;
+                line-height: 0.5405405405405406rem;
+                padding-top: 0.9459459459459459rem;
+                font-size: 0.4864864864864865rem;
+           }
+            p{
+                padding-left: 0.5405405405405406rem;
+                line-height: 0.6756756756756757rem;
+                margin-top: 0.8108108108108109rem;
+           }
+            div{
+                text-align: center;
+                margin-top: 0.5945945945945946rem;
+                span{
+                    display: inline;
+                    font-size: 0.3783783783783784rem;
+                    font-weight: 500;
+               }
+                .contract{
+                    padding-left: 0.13513513513513514rem;
+                    color: #30a1f8;
+               }
+           }
+       }
+   }
+}
+//企业实名认证 
+#enterpriseRZ{
+    .enterpriseRZ{
+        width: 100%;
+        background: #FFF;
+        overflow: auto;
+        position: absolute;
+        top: 1.5135135135135136rem;
+        bottom: 1.3513513513513513rem;
+        .personageContent{
+            margin-bottom: 1.3513513513513513rem;
+            padding: 0 0.32432432432432434rem 0.2702702702702703rem 0.32432432432432434rem;
+            ul{
+                li{
+                    min-height: 1.3513513513513513rem;
+                    line-height: 1.3513513513513513rem;
+                    overflow: hidden;
+                    border-bottom: 1px solid #ebe5e1;
+                    span{
+                        display: block;
+                        float: left;
+                   }
+                    span:nth-child(1){
+                        font-size: 0.43243243243243246rem;
+                        .cf802;
+                   }
+                    span:nth-child(2){
+                        font-size: 0.43243243243243246rem;
+                        padding-left: 0.05405405405405406rem;
+                        width: 40%;
+                   }
+                    .getCodeInput{
+                        // width: 2.7027027027027026rem;
+                        .textIndex1(2.7027027027027026rem);
+                   }
+                    .getCode{
+                        float: right;
+                        width: 1.7567567567567568rem;
+                        font-size: 0.35135135135135137rem;
+                        color: #30a1f8;
+                   }
+                    .addCompany{
+                        float: right;
+                        width: 1.2702702702702702rem;
+                        text-align: center;
+                        img{
+                            width: 0.5675675675675675rem;
+                            height: 0.5675675675675675rem;
+                            display: block;
+                            margin: 0.3783783783783784rem 0.16216216216216217rem;
+                       }
+                   }
+                    input{
+                        font-size: 0.40540540540540543rem;
+                        width: 35%;
+                        height: 1.2972972972972974rem;
+                   }
+                    input.active{
+                        width: 57%;
+                   }
+                    .businessZ{
+                        float: left;
+                        width: 100%;
+                        height: 5.216216216216216rem;
+                        span{
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            line-height: 0.5405405405405406rem;
+                            .cf9;
+                       }
+                        .business{
+                            width: 5.405405405405405rem;
+                            height: 3.7837837837837838rem;
+                            background: #f5f5f5;
+                            margin: 1.027027027027027rem auto;
+                            .bg-image('../../assets/images/electronicContract/addBusiness');
+                            background-size: 0.6756756756756757rem 0.6756756756756757rem;
+                            background-position: 50% center;
+                            input{
+                                width: 5.405405405405405rem;
+                                height: 3.7837837837837838rem;
+                                border: none;
+                                background: transparent;
+                                opacity: 0;
+                                position: absolute;
+                           }
+                            .picture{
+                                width: 5.405405405405405rem;
+                                height: 3.7837837837837838rem;
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                           }
+                       }
+                   }
+                    .identityCardZ , .identityCardF{
+                        float: left;
+                        width: 100%;
+                        height: 4.324324324324325rem;
+                        span{
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                            line-height: 0.6756756756756757rem;
+                            .cf9;
+                       }
+                        div{
+                            width: 5.405405405405405rem;
+                            height: 3.6486486486486487rem;
+                            background: #f5f5f5;
+                            margin: 0 auto;
+                            background-size: 1.4864864864864864rem 1rem;
+                            background-position: 50% center;
+                            input{
+                                width: 5.405405405405405rem;
+                                height: 3.6486486486486487rem;
+                                border: none;
+                                background: transparent;
+                                opacity: 0;
+                                position: absolute;
+                                z-index: 99;
+                                top: 0;
+                           }
+                       }
+                   }
+                    .identityCardZ{
+                        .identityCardZ-file{
+                            .bg-image('../../assets/images/electronicContract/identity');
+                            position: relative;
+                            .picture{
+                                width: 5.405405405405405rem;
+                                height: 3.6486486486486487rem;
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                           }
+                       }
+                   }
+                    .identityCardF{
+                        margin: 0.5405405405405406rem 0;
+                        .identityCardZ-file{
+                            .bg-image('../../assets/images/electronicContract/identityBg');
+                            position: relative;
+                            .picture{
+                                width: 5.405405405405405rem;
+                                height: 3.6486486486486487rem;
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                           }
+                       }
+                   }
+               }
+                li:nth-last-child(1){
+                    border-bottom: none;
+               }
+           }
+       }
+   }
+    .contractBottom{
+        height: 1.3513513513513513rem;
+        line-height: 1.3513513513513513rem;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        border-top: 1px solid #CCC;
+        background: #fabc7a;
+        font-size: 0.43243243243243246rem;
+        text-align: center;
+        color: #fff;
+   }
+    .shadeN{
+        display: none;
+   }
+    .shade{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: block;
+        top: 0;
+        z-index: 999;
+        background: rgba(0,0,0,0.4);
+        .shadeC{
+            width: 8.108108108108109rem;
+            height: 5.675675675675675rem;
+            margin: 55% auto;
+            background: #fff;
+            border-radius: 0.10810810810810811rem;
+            span{
+                display: block;
+                color: #333;
+                font-weight: 600;
+                text-align: center;
+                line-height: 0.5405405405405406rem;
+                padding-top: 0.9459459459459459rem;
+                font-size: 0.4864864864864865rem;
+           }
+            p{
+                text-align: center;
+                line-height: 0.6756756756756757rem;
+                margin-top: 0.8108108108108109rem;
+           }
+            div{
+                text-align: center;
+                margin-top: 0.5945945945945946rem;
+                span{
+                    display: inline;
+                    font-size: 0.3783783783783784rem;
+                    font-weight: 500;
+               }
+                .contract{
+                    padding-left: 0.13513513513513514rem;
+                    color: #30a1f8;
+               }
+           }
+       }
+   }
+}
+.gray{
+    color: gray;
+}
+.contractBottom{
+    height: 1.3513513513513513rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #CCC;
+    background: #FFF;
+    li{
+        width: 50%;
+        float: left;
+        display: block;
+        text-align: center;
+        line-height: 1.3513513513513513rem;
+   }
+    li:nth-child(1){
+        .cf6;
+        .fs16;
+   }
+    li:nth-child(2){
+        .cf0;
+        .fs16;
+        background: #fabc7a;
+   }
+}

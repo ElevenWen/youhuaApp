@@ -1,0 +1,283 @@
+//头部 
+#accountBook{
+    height: 100%;
+    position: relative;
+}
+//暂时这么处理
+ #accountBook.active{
+    overflow: hidden;
+}
+#accountBook .back{
+    height: 1.1891891891891893rem;
+    width: 100%;
+    text-align: center;
+    line-height: 1.162162162162162rem;
+    font-size: 0.4864864864864865rem;
+    color: #1F1F1F;
+     .border-1pxB(#ccc);
+    background:white;
+    position: fixed;
+    z-index: 9;
+}
+#accountBook .return{
+    padding-left: 0.40540540540540543rem;
+    height: 1.0810810810810811rem;
+    width: 0.6486486486486487rem;
+    .bg-image('../../assets/images/tabBar/nav_back');
+    background-size: 100%;
+    background-position: 0.40540540540540543rem 0.24324324324324326rem;
+    position: absolute;
+    left: 0;
+}
+#accountBook .triangle{
+    border-left: 0.10810810810810811rem solid transparent;
+    border-right: 0.10810810810810811rem solid transparent;
+    border-top: 0.13513513513513514rem solid #333333;
+    padding-top: 0.08108108108108109rem;
+    display: inline-block;
+}
+#accountBook .accountBook-content{
+    width: 94%;
+    position: absolute;
+    left: 0;
+    top: 2.891891891891892rem;
+    margin: 0 3%;
+}
+//日期弹出框 
+.mask{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.4);
+}
+.datePickerPop{
+    width: 100%; 
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 20;
+    .datePickerHead{
+        height: 1.1891891891891893rem;
+        background: #ededed;
+        display: flex;
+        text-align: center;
+        line-height: 1.1891891891891893rem;
+        .cancel,.enter{
+            flex: 1;
+            font-size: 0.43243243243243246rem;
+            color: #30a1f8;
+       }
+        .choose{
+            width: 6.72972972972973rem;
+            font-size: 0.4864864864864865rem;
+            color: #000000;
+       }
+   }
+    .datePicker-content{
+         
+        .year-month{
+            height: 0.972972972972973rem;
+            display: flex;
+            li{
+                flex: 1;
+                text-align: center;
+                line-height: 0.972972972972973rem;
+                font-size: 0.43243243243243246rem;
+                color: #000;
+           }
+       }
+   }
+}
+
+//无数据 
+#accountBook .cash{
+    background: #fff;
+    .bg-image('../../assets/images/mine/nullCart');
+    background-size: 70%;
+    background-position: 50% 5%;
+    line-height: 16.027027027027028rem;
+    text-align: center;
+    font-size: 0.32rem;
+}
+
+.tab-forms{
+    width: 94%;
+    height: 1.026667rem;
+    border:1px solid #ff3e08;
+    margin: 0.32432432432432434rem auto;
+    border-radius: 0.10810810810810811rem;
+    background: #fff;
+    // position: absolute;
+    // top: 1.1891891891891893rem;
+    // left: 3%;
+    ul{
+        display: flex;
+        li{
+            flex: 1;
+            line-height: 1.027027027027027rem;
+            text-align: center;
+            font-size: 0.3783783783783784rem;
+            color: #ff3e08;
+       }
+        li:nth-of-type(2){
+            border-left: 1px solid #ff3e08;
+            border-right: 1px solid #ff3e08;
+       }
+        li.active{
+            background: #ff3e08;
+            color: #fff;
+       }
+   }
+}
+#accountBook .wrap{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 1.1891891891891893rem;
+    overflow: scroll;
+}
+#accountBook .wrap.active{
+    bottom: 0;
+}
+#accountBook .company-search{
+    margin: 0 auto;
+    width: 94%;
+    margin-bottom: 0.32432432432432434rem;
+    .search{
+        height: 0.9459459459459459rem;
+        // position: relative;
+        .search-bar{
+            background: #fff;
+            height: 0.9333rem;
+            border: 1px solid #cccccc;
+            display: flex;
+            div{
+                width: 0.8919rem;
+                height: 0.9333rem;
+                .bg-image('../../assets/images/report/search');
+                background-size: 50%;
+                background-position: 0.2703rem 0.2rem;
+           }
+            input{
+                flex: 1;
+                height: 0.87rem;
+                line-height: 1;
+                padding: 0;
+           }
+            input::-webkit-input-placeholder{
+                color: #b2b2b2;
+                font-size: 0.3783783783783784rem;
+           }
+       }
+   }
+}
+#accountBook .search-list{
+    position: absolute;
+    left: 3%;
+    top: 3.891891891891892rem;
+    width: 94%;
+    // min-height: 100%;
+    background: white;
+    z-index: 9;
+    box-shadow: 0 0 1px 0.05405405405405406rem #efefef;
+    overflow: auto;
+    bottom: 0;
+}
+#accountBook .search-list ul li{
+    font-size: 0.3783783783783784rem;
+    line-height: 1.2162162162162162rem;
+    height: 1.2162162162162162rem;
+     .border-1pxB(#ebe5e1);
+    padding-left: 0.2702702702702703rem;
+}
+#accountBook .search-list .search-record li{
+    padding: 0 0.2702702702702703rem;
+    height: 1.0810810810810811rem;
+    line-height: 1.0810810810810811rem;
+    span{
+        width: 0.40540540540540543rem;
+        height: 0.40540540540540543rem;
+        float: right;
+        display: block;
+        background-size: 100% 100%;
+        margin: 0.35135135135135137rem 0rem;
+        .bg-image('../../assets/images/tabBar/deleteIcon');
+   }
+}
+#accountBook .company-search .search .search-list .search-record .history{
+    font-size: 0.40540540540540543rem;
+}
+//总账
+ #accountBook .wrap .content{
+    margin: 0 auto;
+    width: 94%;
+    .ledger .ledger-list{
+        background: #fff;
+        margin-bottom: 0.32432432432432434rem;
+        .border-1px(#8c8c8c);
+        .ledger-head{
+            height: 1.2432432432432432rem;
+            padding: 0.35135135135135137rem 0 0 0.32432432432432434rem;
+            color: #e08b27;
+            background: #fff;
+            line-height: 0.5135135135135135rem;
+            position: relative;
+            overflow: hidden;
+             .border-1pxB(#8c8c8c);
+            span:nth-of-type(1){
+                float: left;
+                margin-right: 0.13513513513513514rem;
+                display: block;
+                width: 0.40540540540540543rem;
+                height: 0.4864864864864865rem;
+                .bg-image('../../assets/images/report/table');
+                background-size: 100%;
+           }
+       }
+        .ledger-content{
+            padding: 0 0.13513513513513514rem;
+            color: #333;
+            height: 3.2432432432432434rem;
+            .ledger-out>li{
+                height: 0.6756756756756757rem;
+                text-align: right;
+                .ledger-in{
+                    display: flex;
+                    li{
+                        flex: 1;
+                        color: #666666;
+                   }
+                    li:nth-child(1){
+                        text-align: left;
+                        color: #333;
+                   }
+               }
+           }
+            .ledger-out>li:nth-child(1){
+                height: 1.135135135135135rem;
+                line-height: 1.135135135135135rem;
+                ul li{
+                    color: #333;
+               }
+           }
+       }
+        .balance{
+            height: 3.918918918918919rem;
+       }
+        .ledgerDetail .ledger-out>li .ledger-in li:nth-child(1){
+            width: 1.135135135135135rem;
+            flex: none;
+       }
+   }
+}
+//iphone5 兼容问题 
+@media screen and (max-width:8.64864864864865rem){
+    .ledger-in li{
+        font-size: 0.32432432432432434rem !important;
+   }
+}
+

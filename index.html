@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	  <meta charset="utf-8">
+	  <title>微企宝</title>
+	  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+	  <link rel="stylesheet" href="/static/reset.css" />
+	  <link rel="stylesheet" href="/static/css/swiper-4.2.6.min.css" />
+	  <link type="favicon" rel="shortcut icon"   type="image/x-icon" href="/static/favicon.ico" />
+	   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /> 
+	  <meta name="format-detection" content="telephone=yes">
+	  <meta name="format-detection" content="email=no">
+	  <meta http-equiv="x-rim-auto-match" content="none">
+	  <meta name="apple-mobile-web-app-capable" content="yes">
+	  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	  
+	 
+		<!-- <script src="http://sdk.talkingdata.com/app/h5/v1?appid=8D323341B6494EE39615867BBE8209BB&vn=微企宝App&vc=2.7.1"></script> -->
+		<script src="https://jic.talkingdata.com/app/h5/v1?appid=8D323341B6494EE39615867BBE8209BB&vn=微企宝App&vc=2.7.3"></script>
+	  <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/qzact/common/share/share.js"></script>
+	  <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	  <script src="/static/js/mateAuto.js"></script>
+	  <script src="/static/js/canvas.js"></script>
+	  <script src="/static/js/swiper-4.2.6.min.js"></script>
+	  <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=b7fS85uCD1O8vpMyNz9zzgAyB0RUSxPb&services=&t=20171212143337"></script>
+	    
+  </head>
+
+	<body>
+		<div id="appWrap"></div>
+
+		<script type=text/javascript charset=utf-8>
+			console.log('index.html')
+		
+			//rem适配
+			// (function() {
+			// 	var width = document.documentElement.clientWidth;
+			// 	var html = document.documentElement;
+			// 	var styleNode = document.createElement('style');
+			// 	styleNode.innerHTML = 'html{font-size:' + width / 16 + 'px !important}'
+			// 	document.head.appendChild(styleNode);
+			// })();
+			//返回键
+			var count = 1;
+			var time1 = null;
+			var time2 = null;
+
+			//判断是否在app内
+			var isTrue = false;
+
+			//判断版本号是否一致
+			var version = "2.7.4";
+			//下载进度
+			var dwProgress = 0;
+
+			//微信分享
+			var shares = null;
+			var share_bhref = false;
+			var share_img = ''; //分享显示图片
+			var share_thumb_img = '' //缩略图
+			var share_content = ''; //分享内容
+			var share_href = ''; //分享链接
+			var share_title = ''; //分享标题
+			var bussType = ''; //业务类型
+			var bussId = ''; //分享邀请码id
+
+			//第三方登录
+			var auths = null;
+
+			//调用微信支付
+			function toPay(num) {
+				location.href = 'https://api.wqbol.com/Payment/H5WxBuy?out_trade_no=' + num;
+			}
+
+			//更新
+			function toUpdate() {
+				var dtask = plus.downloader.createDownload("https://host.wqbol.com/wqbol.apk", {});
+				dtask.start();
+				dtask.addEventListener("statechanged", function(task, status) {
+					switch(task.state) {
+						case 1: // 开始
+							break;
+						case 2: //已连接到服务器
+							break;
+						case 3: // 已接收到数据
+							dwProgress = parseInt(100 * task.downloadedSize / task.totalSize);
+							break;
+						case 4: // 下载完成
+							//			                plus.runtime.install(plus.io.convertLocalFileSystemURL(task.filename),//安装APP
+							//			                               {force:true},function(){
+							//
+							//			                },function(){
+							//			                    mui.toast('安装失败');
+							//			                });
+							plus.runtime.install(task.filename);
+							break;
+					}
+				});
+			}
+			//退出应用
+			function quit() {
+				plus.runtime.quit();
+			}
+
+			//分享
+			var wrhShare = function() {
+				return {
+					/**
+					 * 初始化分享服务
+					 */
+					init: function() {
+						plus.share.getServices(function(s) {
+							shares = {};
+							for(var i in s) {
+								var t = s[i];
+								shares[t.id] = t;
+							}
+						}, function(e) {
+							plus.nativeUI.toast("获取分享服务列表失败：" + e.message);
+						});
+
+					},
+					/**
+					 * 分享操作
+					 * @param {Object} id
+					 * @param {Object} ex
+					 */
+					shareAction: function(id, ex) {
+						var s = null;
+						if(!id || !(s = shares[id])) {
+							plus.nativeUI.toast("无效的分享服务！");
+							return;
+						}
+						if(s.authenticated) {
+							wrhShare().shareMessage(s, ex);
+						} else {
+							s.authorize(function() {
+								wrhShare().shareMessage(s, ex);
+							}, function(e) {
+								plus.nativeUI.toast("认证授权失败：" + e.code + " - " + e.message);
+							});
+						}
+					},
+					shareShow: function() {
+						//弹窗
+						var ids = [
+								//								{
+								//									id: "sinaweibo"
+								//								},
+								{
+									id: "weixin",
+									ex: "WXSceneSession"
+								}, {
+									id: "weixin",
+									ex: "WXSceneTimeline"
+								},
+								{
+									id: "qq"
+								}
+							],
+							bts = [
+								//								{
+								//									title: "分享到新浪微博"
+								//								},
+								{
+									title: "发送给微信好友"
+								}, {
+									title: "分享到微信朋友圈"
+								},
+								{
+									title: "分享到QQ"
+								}
+							];
+						plus.nativeUI.actionSheet({
+								cancel: "取消",
+								buttons: bts
+							},
+							function(e) {
+								var i = e.index;
+								if(i > 0) {
+									wrhShare().shareAction(ids[i - 1].id, ids[i - 1].ex);
+								} else {
+
+								}
+							}
+						);
+					},
+					/**
+					 * 打开分享操作列表
+					 * @param {Object} bussType_param 业务类型 必填 业务类型枚举类 BusinessTypeEnum
+					 * @param {Object} bussId_param 业务Id 必填
+					 * @param {Object} title_param 标题 必填
+					 * @param {Object} content_param 内容 必填
+					 * @param {Object} img_param 图片 可选 格式:album/20150725123555_519.JPG,不需要加图片域名
+					 * @param {Object} href_param 链接 可选,格式:'https://wanrenhui.com'
+					 */
+					sendShare: function(bussType_param, bussId_param, title_param, content_param, img_param, href_param) {
+						console.log(bussType_param, bussId_param, title_param, content_param, img_param, href_param)
+						wrhShare().init();
+						bussType = bussType_param;
+						bussId = bussId_param;
+						share_title = title_param;
+						share_content = content_param;
+						//share_img = imgServer + img_param;
+						//share_thumb_img = imgServer + img_param + '@80w_80h_0e';
+						share_img = img_param; //分享图片 
+						share_href = href_param;
+						if(share_href == '') {
+							share_bhref = false;
+						} else {
+							share_bhref = true;
+						}
+						wrhShare().shareShow();
+					},
+					// id 表示 调用分享大类:微信 和QQ , ex 表示调用分享具体类型 :微信好友 朋友圈 QQ好友
+					sendShareCustom: function(id, ex, bussType_param, bussId_param, title_param, content_param, img_param, href_param) {
+						bussType = bussType_param;
+						bussId = bussId_param;
+						share_title = title_param;
+						share_content = content_param;
+						//share_img = imgServer + img_param;
+						//share_thumb_img = imgServer + img_param + '@80w_80h_0e';
+						share_img = img_param; //分享图片
+
+						share_href = href_param;
+						if(share_href == '') {
+							share_bhref = false;
+						} else {
+							share_bhref = true;
+						}
+
+						plus.share.getServices(function(s) {
+							shares = {};
+							for(var i in s) {
+								var t = s[i];
+								shares[t.id] = t;
+							}
+
+							wrhShare().shareAction(id, ex);
+						}, function(e) {
+							plus.nativeUI.toast("获取分享服务列表失败：" + e.message);
+						});
+
+					},
+					/**
+					 * 发送分享消息
+					 * @param {Object} s
+					 * @param {Object} ex
+					 */
+					shareMessage: function(s, ex) {
+						var msg = {
+							extra: {
+								scene: ex
+							}
+						};
+						/* 举例子
+							msg.content = share_content;
+							msg.title = share_title;
+							msg.thumbs = [share_thumb_img];
+							msg.pictures = [share_img];
+						*/
+						msg.content = share_content;
+						msg.title = share_title;
+						msg.thumbs = [share_img];
+						msg.pictures = [share_img];
+						var sendMessage = function() {
+							console.log(JSON.stringify(msg));
+							/****pictures: (Array[ String ] 类型 )分享消息的图片
+							 *content: (String 类型 )分享消息的文字内容
+							 * 分享消息中包含的图片路径，仅支持本地路径。 若分享平台仅支持提交一张图片，传入多张图片则仅提交第一张图片。 如果不能同时支持其它内容信息，优先级顺序为：pictures>content。
+							 * thumbs: (Array[ Stromg ] 类型 )分享消息的缩略图分享消息中包含的缩略图路径，支持本地路径及网络路径。 若分享平台仅支持提交一张图片，传入多张图片则仅提交第一张图片。 如果分享平台的信息不支持缩略图，若没有设置消息的图片（pictures）则使用缩略图，否则忽略其属性值。 注意：图片有大小限制，推荐图片小于20Kb。
+							 * href: (String 类型 )分享独立的链接
+							 * 分享独立链接地址，仅支持网络地址（以http://或https://开头）。 如果不能同时支持其它内容信息，优先级顺序为：href>pictures>content。
+							 * title: (String 类型 )分享消息的标题目前仅微信分享独立链接消息时支持。
+							 * geo: (GeoPosition 类型 )分享消息中包含的用户地理信息数据
+							 * extra: (ShareMessageExtra 类型 )分享消息扩展参数
+							 * interface: (String 类型 )分享消息的模式
+							 * interface 参数"auto" - 自动选择，如果已经安装微博客户端则采用编辑界面进行分享，否则采用无界面分享； "slient" - 静默分享，采用无界面模式进行分享；
+							 *
+							 *
+							 * interface 参数"editable" - 进入编辑界面，用户确认分享内容后发送，如果当前未安装微博客户端则触发错误回调。 默认值为"auto"。 （仅新浪微博分享时生效）
+							 *
+							 * **/
+							var params = {
+								//bussType: bussType,//业务类型
+								//bussId: bussId,//分享邀请码id
+								content: share_content,
+								title: share_title,
+								href: share_href,
+								img: share_img,
+								//type: s.id//暂时不用id
+							};
+							//保存分享记录到数据库
+							//var addShare = function() {
+							//wrhFunc.ajax('/userShare/addShare', params, 'post', function(data) {});
+							//}
+							s.send(msg, function() {
+								plus.nativeUI.toast("分享到\"" + s.description + "\"成功！ ");
+								console.log("分享到\"" + s.description + "\"成功，返回应用 "); //分享给qq好友，微信好友如果不返回应用，无法监听到分享成功回调
+								//aparams.status = 0;
+								//addShare();
+							}, function(e) {
+								console.log("分享到\"" + s.description + "\"失败！ " + e.code + " - " + e.message);
+								//若用户未安装微信提示  ,请用户安装微信
+								if(e.code == "-8") {
+									plus.nativeUI.toast("请先安装微信程序");
+								}
+								//aparams.status = 1;
+								//aparams.message = e.code + e.message;
+								//addShare();
+							});
+						}
+						// if('sinaweibo' == s.id) { //新浪微博无法分享链接,不传递href，不能写href='',否则无法显示图片
+						// 	if(plus.os.name == "Android") { //Android 不能分享网络图片
+						// 		//下载图片到本地
+						// 		mui.toast("下载图片中，即将打开新浪微博分享...");
+						// 		var dtask = plus.downloader.createDownload();
+						// 		var localPictures = '';
+
+						// 		function onStateChanged(d, status) {
+						// 			switch(d.state) {
+						// 				case 4:
+						// 					if(status == 200) {
+						// 						console.log("图片下载完成：" + d.filename);
+						// 						localPictures = plus.io.convertLocalFileSystemURL(d.filename);
+						// 						msg.thumbs = [localPictures];
+						// 						msg.pictures = [localPictures];
+						// 						sendMessage();
+						// 					} else {
+						// 						mui.toast("下载图片失败");
+						// 					}
+						// 					break;
+						// 				case 1:
+						// 					console.log("下载开始");
+						// 					break;
+						// 				case 2:
+						// 					console.log("请求已响应");
+						// 					break;
+						// 				case 3:
+						// 					console.log("下载进行中");
+						// 					break;
+						// 				default:
+						// 					console.log("state: " + d.state);
+						// 					break;
+						// 			}
+						// 		}
+						// 		mui.each(msg.pictures, function(i, n) {
+						// 			// 创建下载任务
+						// 			var dtask = plus.downloader.createDownload(n);
+						// 			dtask.addEventListener("statechanged", onStateChanged, false);
+						// 			dtask.start();
+						// 		});
+						// 	}
+						// } else {
+						// 	msg.href = share_href;
+						// 	sendMessage();
+						// }
+						msg.href = share_href;
+						sendMessage();
+					}
+				}
+			}
+
+			//保存图片  参数1 传入图片的url  保存长图
+			//保存图片  参数1 传入图片的url  保存长图
+			var savePicture = {
+				tempDOM: function(domId, sH, sW) { //cloneDOM  参数1  dom节点  ; 参数2 参数1 dom身上需 获取的属性(截图默认微height) 
+					_domId = document.getElementById(domId)
+					var heightClone = savePicture.getStyle(_domId, sH);
+					var widthClone = savePicture.getStyle(_domId, sW);
+
+					var cloneDom = _domId.cloneNode(true); //解决ios bug  //克隆节点，默认为false，不复制方法属性，为true是全部复制。
+					document.getElementsByTagName("body")[0].appendChild(cloneDom);
+
+					cloneDom.style = " position:relative;zIndex:-182;height:" + heightClone + ';width:' + widthClone;
+
+					return cloneDom;
+				},
+
+				canvasFn: function(cloneDom, Indicator) { // canvas ==> base64 
+					html2canvas(cloneDom, {
+						onrendered: function(canvas) {
+							//把截取到的图片替换到a标签的路径下载  
+							savePicture.savePictureFn(canvas.toDataURL(), cloneDom, Indicator)
+						}
+					});
+				},
+				savePictureFn: function(dataUrl, cloneDom, page) { //save 本地  参数要求是base64
+					bitmap = new plus.nativeObj.Bitmap();
+					// 加载Base64编码格式图片到Bitmap对象
+					bitmap.loadBase64Data(dataUrl, function(ii) {
+						//						alert('成功加载Base64编码格式图片到Bitmap对象 ')
+						console.log("加载Base64图片数据成功", ii);
+						//删除克隆的图片
+						//						document.getElementsByTagName("body")[0].removeChild(cloneDom);
+						if(cloneDom) {
+							document.getElementsByTagName("body")[0].removeChild(cloneDom);
+							document.body.style.overflow = 'visible'
+							page.close()
+						}
+
+						console.log(JSON.stringify(cloneDom))
+						// console.log("判断截图是否被删除", cloneDom)
+						saveBitmap(new Date().getTime()); //保存本地
+					}, function(error) {
+						//						alert('失败加载Base64编码格式图片到Bitmap对象 ')
+						console.log('加载Base64图片数据失败：' + JSON.stringify(error));
+					});
+
+					function saveBitmap(randomName) {
+						//保存截图名字  ==>按照时间戳保存截图名字
+						var url = '/images/' + randomName + ".jpg";
+						var path = plus.io.convertLocalFileSystemURL(url);
+						bitmap.save(path, {
+							overwrite: true,
+							format: "png",
+							quality: 90,
+							clip: {
+								top: '0px',
+								left: '0px',
+								width: '100%',
+								height: '100%',
+								zIndex: '999'
+							}
+						}, function(i) {
+							// alert('图片保存成功')
+							// console.log('保存图片成功111111：' + JSON.stringify(i));
+							// console.log(i.target);
+							plus.gallery.save(i.target, function(aaaa) {
+								document.body.style.overflow = 'inherit';
+								alert("保存图片到相册成功,请进入相册查看");
+								// console.log(aaaa);
+							}, function(error) {
+								alert("您的手机不支持")
+								document.body.style.overflow = 'inherit';
+								//console.log(error)
+								//console.log('保存图片失败：' + JSON.stringify(error))
+							});
+
+						}, function(e) {
+							// console.log('保存图片失败222222：' + JSON.stringify(e));
+						});
+					}
+				},
+				getStyle: function(oElement, sName) { //兼容ios
+					return oElement.currentStyle ? oElement.currentStyle[sName] : getComputedStyle(oElement, null)[sName];
+				}
+			}
+			// console.log(savePicture.tempDOM);
+
+			//截图方法调用
+			// var cloneDom = tempObj.tempDOM(domId, "height");// 获取clone 节点
+			// console.log( "coneoweofsdfdsfds", cloneDom)
+			// tempObj.canvasFn(cloneDom).then(function(canvas) { //canvas 画图
+			// 			console.log("vavavavad")
+			// 			let dataUrl = canvas.toDataURL();
+			// 			console.log( dataUrl )
+			// 			tempObj.savePictureFn(dataUrl,cloneDom);  //保存图片
+
+			//    });
+
+			//监听设备
+			document.addEventListener("plusready", function() {
+
+				//获取appid
+				if(plus.runtime.appid == "1106428143") {
+					isTrue = true;
+				}
+				//获取版本号
+				version = plus.runtime.version;
+
+				//监听手机返回键
+				plus.key.addEventListener("backbutton", eventBackButton, false);
+				//返回键点击响应
+				function eventBackButton() {
+					var a = location.href;
+					if(a.slice(a.length - 4, a.length) == "home") {
+						//在浏览历史中添加记录
+						history.pushState(null, null, a)
+						if(count == 1) {
+							count++;
+							time1 = new Date().getSeconds();
+							plus.nativeUI.toast('再点击一次退出!');
+						} else if(count == 2) {
+							time2 = new Date().getSeconds();
+							if(time2 - time1 > 3) {
+								count = 1;
+								plus.nativeUI.toast('再点击一次退出!');
+							} else {
+								plus.runtime.quit();
+							}
+						}
+					} else {
+						//查看未完成
+						plus.downloader.enumerate(function(tasks) {
+							if(tasks.length > 0) {
+								plus.downloader.clear();
+								dwProgress = 0;
+							}
+						});
+
+						window.history.back();
+					}
+				}
+			})
+		</script>
+
+
+
+		<!--<script src="/static/js/echarts.js"></script>-->
+    <!-- built files will be auto injected -->
+  </body>
+
+
+
+</html>

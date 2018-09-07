@@ -1,0 +1,509 @@
+// 头部样式 //不用position:relative 尽量不用 所有float的要用overflow清除浮动 #title{
+     // background:white;
+     // position: fixed;
+     // top: 0;
+     // left: 0;
+     // right: 0;
+	// }
+	#companyDetails{
+		// background: white;
+		padding: 0.1px;
+   }
+	#title_name{
+		//margin-left: 1.3513513513513513rem;
+   }
+	#companyDetails .popularity-return {
+		position: fixed;
+		height: 1.1891891891891893rem;
+		width: 100%;
+		text-align: center;
+		line-height: 1.162162162162162rem;
+		font-size: 0.4864864864864865rem;
+		color: #1F1F1F;
+		overflow:hidden;
+		// border-bottom: 1px solid #EBE5E1;
+		.border-1pxB(#EBE5E1);
+		// top: 0;
+		// right: 0;
+		// left: 0;
+		background:white;
+		z-index: 999;
+   }
+	#title .return{
+		padding-left: 0.40540540540540543rem;
+		height: 1.0810810810810811rem;
+		width: 0.6486486486486487rem;
+		.bg-image('../../assets/images/tabBar/nav_back');
+		background-size: 100%;
+		background-position: 0.40540540540540543rem 0.24324324324324326rem;
+		position: absolute;
+		left: 0;
+   }
+	.return a{
+		width: 100%;
+		height: 100%;
+		display: block;
+   }
+	#submit{
+		float: right;
+		font-size: 0.40540540540540543rem;
+		color: #FA2802;
+		margin-right: 0.40540540540540543rem;
+   }
+	#titleRightOne,#titleRightTwo{
+		display: inline-block;
+		float: right;
+		// position: relative;
+		// margin-top: 0.2702702702702703rem;
+		// margin-right: 0.08108108108108109rem;
+   }
+	#titleRightOne{
+		width: 0.5945945945945946rem;
+		height: 0.5945945945945946rem;
+		.bg-image('../../assets/images/productDetails/share');
+		background-size: 0.5945945945945946rem 0.5945945945945946rem;
+   }
+	#titleRightTwo,#titleRightTwo1{
+		width: 0.6216216216216216rem;
+		height: 0.6216216216216216rem;
+		.bg-image('../../assets/images/businessQuery/long-img');
+		background-size: 0.6216216216216216rem 0.6216216216216216rem;
+		margin: 0.2702702702702703rem 0.2702702702702703rem;
+		// padding-right: 0.2702702702702703rem;
+   }
+	// 公司名称 
+	.companyName{
+		background: white;
+		height: 1.6216216216216217rem;
+		line-height: 1.5945945945945945rem;
+		text-align: center;
+		.border-1pxB(#EBE5E1);
+		// margin-top: 1.1891891891891893rem;
+   }
+	.companyName span{
+		display: inline-block;
+		.textIndex1(60%);
+		font-weight: 600;
+		font-size: 0.43243243243243246rem;
+   }
+	// 登记信息 
+	.registerInfor{
+		height: 1.0810810810810811rem;
+		background-color: white;
+		.border-1pxB(#EBE5E1);
+		line-height: 1.054054054054054rem;
+		font-size: 0.43243243243243246rem;
+		overflow: hidden;
+   }
+	.registerInforFont{
+		margin-left: 0.35135135135135137rem;
+		font-weight: 600;
+   }
+	.registerInforDown{
+		display: inline-block;
+		width: 0.3783783783783784rem;
+		height: 0.21621621621621623rem;
+		float: right;
+		.bg-image('../../assets/images/productDetails/unfolded');
+		background-size: 0.3783783783783784rem 0.21621621621621623rem;
+		margin: 0.35135135135135137rem 0.40540540540540543rem 0 0;
+   }
+	.registerInforDown2{
+		display: inline-block;
+		width: 0.3783783783783784rem;
+		height: 0.21621621621621623rem;
+		float: right;
+		.bg-image('../../assets/images/productDetails/recover');
+		background-size: 0.3783783783783784rem 0.21621621621621623rem;
+		margin: 0.35135135135135137rem 0.40540540540540543rem 0 0;
+   }
+	// 法定代表人 
+	.statutoryPerson{
+		height: 5.405405405405405rem;
+		overflow: hidden;
+		background: #fff;
+		border: 1px solid transparent;
+   }
+	.person{
+		margin: 0.40540540540540543rem 0 0 0.35135135135135137rem;
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	.name{
+		font-size: 0.35135135135135137rem;
+		color: #30A1F8;
+		margin: 0.2972972972972973rem 0 0 0.35135135135135137rem;
+   }
+	.DataWrap{
+		width: 48%;
+		// height: 3.5405405405405403rem;
+		// word-wrap: break-word;
+		float: left;
+		word-wrap: break-word;
+   }
+   	.data_wrap{
+		padding-left: 0.35135135135135137rem;
+   	}
+	.setDataWrap,.registeredAssets{
+		// height: 1.054054054054054rem;
+		margin-top: 0.2702702702702703rem;
+		border-right: 1px solid #EBE5E1;
+   }
+	.registeredAssets{
+		border: none;
+   }
+	.setData{
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+		padding-left: .266667rem;
+   }
+	.aaa{
+		padding-left: 0 !important;	
+	}
+	.data{
+		padding-top: 0.2702702702702703rem;
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		padding: 0.2702702702702703rem .266667rem 0 .266667rem;
+   }
+	.companyTypeWrap,.registerType{
+		margin-top: 0.6756756756756757rem;
+		border-right: 1px solid #EBE5E1;
+   }
+	.registerType{
+		border: none;
+   }
+	.companyType{
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	.typeDetail{
+		padding-top: 0.2702702702702703rem;
+		color: #8C8C8C;
+		font-size: .366667rem;
+   }
+	.moneyWrap{
+		float: left;
+		width: 50%;
+		// word-wrap: break-word;
+		padding-left: 0.40540540540540543rem;
+		padding-bottom: 0.2702702702702703rem;
+		word-wrap: break-word;
+   }
+	.separateLine{
+		width: 1px;
+		height: 1.054054054054054rem;
+		background: #EBE5E1;
+   }
+	// 统一社会信用代码 
+	.creditCodeWrap{
+		height: 3.135135135135135rem;
+		background: #fff;
+		margin-top: 0.40540540540540543rem;
+   }
+	.creditCode{
+		margin-left: 0.35135135135135137rem;
+		padding-top: 0.40540540540540543rem;
+   }
+	.creditCode li:nth-child(1){
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	.creditCode li:nth-child(2){
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		padding-top: 0.2702702702702703rem;
+   }
+	.registerWrap{
+		margin-left: 0.35135135135135137rem;
+		padding-top: 0.40540540540540543rem;
+		overflow:hidden;
+   }
+	.register{
+		width: 46%;
+		float: left;
+   }
+	.register li:nth-child(1){
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	.register li:nth-child(2){
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		padding-top: 0.2702702702702703rem;
+   }
+	.organization{
+		width: 40%;
+		float: left;
+		padding-left: 0.40540540540540543rem;
+		border-left: 1px solid #EBE5E1;
+   }
+	.organization li:nth-child(1){
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	.organization li:nth-child(2){
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		padding-top: 0.2702702702702703rem;
+   }
+	// 英文名 
+	.nameWrap{
+		// height: 3.6486486486486487rem;
+		background: #fff;
+		margin-top: 0.40540540540540543rem;
+		padding-left: 0.35135135135135137rem;
+   }
+	.EnglishName{
+		height: 1.2162162162162162rem;
+		line-height: 1.1891891891891893rem;
+		.border-1pxB(#EBE5E1);
+		position: static;
+		overflow: hidden;
+   }
+	.EnglishName span:nth-child(1){
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	.EnglishName span:nth-child(2){
+		float: right;
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		margin-right: 0.4594594594594595rem;
+   }
+	// 经营范围 
+	.businessScopeWrap{
+		// height: 3rem;
+		margin-top: 0.40540540540540543rem;
+		background: #fff;
+		padding:0 0 0.2702702702702703rem 0.35135135135135137rem;
+
+   }
+	.businessScope{
+		padding-top: 0.40540540540540543rem;
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	.businessDetail{
+		padding-top: 0.2702702702702703rem;
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		line-height: 0.5405405405405406rem;
+   }
+	// 公司地址 
+	.companyAddress{
+		height: 1.2162162162162162rem;
+		background: #fff;
+		margin-top: 0.40540540540540543rem;
+		padding-left: 0.35135135135135137rem;
+		overflow:hidden;
+   }
+	.addressRight{
+		width: 0.21621621621621623rem;
+		height: 0.3783783783783784rem;
+		.bg-image('../../assets/images/tabBar/right_arrow');
+		background-size: 0.21621621621621623rem 0.3783783783783784rem;
+		float: right;
+		margin-top: 0.40540540540540543rem;
+		margin-right: 0.2702702702702703rem;
+   }
+	.address{
+		float: right;
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		margin-right: 0.13513513513513514rem;
+		.textIndex1(60%);
+   }
+	// 营业期限 
+	.busnissTerm{
+		// height: 3.6486486486486487rem;
+		background: #fff;
+		padding-left: 0.32432432432432434rem;
+		margin-top: 0.40540540540540543rem;
+		.EnglishName{
+			border-bottom: 1px solid #ebe5e1;
+		}
+   }
+	// 股东 
+	.shareholder1{
+		height: 1.0810810810810811rem;
+		line-height: 1.054054054054054rem;
+		background: #fff;
+		.border-1pxB(#EBE5E1);
+		padding-left: 0.32432432432432434rem;
+		// margin-top: 0.40540540540540543rem;
+		width: 100%;
+		overflow: hidden;
+		// float: left;
+   }
+   .bbb{
+	   margin-top: 0.40540540540540543rem;
+   }
+	.shareholder1 span:nth-child(1){
+		font-size: 0.43243243243243246rem;
+		font-weight: 600;
+   }
+	.shareholder1 span:nth-child(3){
+		font-size: 0.3783783783783784rem;
+		color: #8C8C8C;
+		float: right;
+		margin-right: 0.5405405405405406rem;
+   }
+	.up{
+		width: 0.3783783783783784rem;
+		height: 0.21621621621621623rem;
+		.bg-image('../../assets/images/productDetails/unfolded');
+		background-size: 0.3783783783783784rem 0.21621621621621623rem;
+		float: right;
+		position: relative;
+		top: 0.40540540540540543rem;
+		right: 0.2702702702702703rem;
+   }
+	.up2{
+		width: 0.3783783783783784rem;
+		height: 0.21621621621621623rem;
+		.bg-image('../../assets/images/productDetails/recover');
+		background-size: 0.3783783783783784rem 0.21621621621621623rem;
+		float: right;
+		position: relative;
+		top: 0.40540540540540543rem;
+		right: 0.2702702702702703rem;
+   }
+	.shareholder{
+		// border: 1px solid red;
+   }
+	.shareholderWrap{
+		background: #fff;
+   }
+	.shareholderName{
+		.border-1pxB(#ebe5e1);
+		font-size: 0.40540540540540543rem;
+		margin-left: 0.32432432432432434rem;
+   }
+	.shareholderName span{
+		display: inline-block;
+		height: 1.2162162162162162rem;
+		line-height: 1.2162162162162162rem;
+		font-size: 0.35135135135135137rem;
+		color: #8C8C8C;
+		&:nth-child(1){
+			color: #30A1F8;
+	   }
+   }
+	.second{
+		width: 100%;
+		display: inline-block;
+   }
+	.shareholderDetail{
+		height: 3.72972972972973rem;
+		padding-top: 0.2702702702702703rem;
+		.border-1pxB(#EBE5E1);
+		margin-left: 0.35135135135135137rem;
+   }
+	.proportion{
+		color: #8C8C8C;
+		font-size: 0.3783783783783784rem;
+   }
+	.proportionNumber{
+		color: black;
+		font-size: 0.40540540540540543rem;
+		font-weight: 600;
+   }
+	// 主要人员 
+	.mainPeople{
+		// height: 5.54054054054054rem;
+		background: #fff;
+		// margin-top: 0.40540540540540543rem;
+   }
+	.mainPeopleDetail{
+		height: 1.6216216216216217rem;
+		overflow: hidden;
+		.border-1pxB(#EBE5E1);
+		margin-left: 0.40540540540540543rem;
+   }
+	.headImg{
+		width: 0.9459459459459459rem;
+		height: 0.9459459459459459rem;
+		margin: 0.2702702702702703rem 0 0 0;
+		float: left;
+   }
+	.peopleName{
+		display: inline-block;
+		float: left;
+		margin: 0.2702702702702703rem 0 0 0.40540540540540543rem;
+   }
+	.namee{
+		font-size: 0.3783783783783784rem;
+		color: #30A1F8;
+   }
+	.poster{
+		font-size: 0.32432432432432434rem;
+		color: #8C8C8C;
+		margin-top: 0.13513513513513514rem;
+   }
+	// 变更记录 
+	.changeRecord{
+		background: white;
+		padding-bottom: 0.40540540540540543rem;
+		width: 100%;
+		// float: left;
+		overflow:hidden;
+   }
+	.dataa{
+		line-height: 1.4324324324324325rem;
+		margin-left: 0.35135135135135137rem;
+		font-size: 0.35135135135135137rem;
+		color: #666666;
+   }
+	.dataa span{
+		display: inline-block;
+		font-size: 0.3783783783783784rem;
+		color: black;
+		margin:0 0.2702702702702703rem 0 0.2702702702702703rem;
+		font-weight: 600;
+		.textIndex1(68%);
+		vertical-align: top;
+   }
+	.changeRecordDetail{
+		width: 93%;
+		// height: 4.864864864864865rem;
+		float: left;
+		.border-1px(#EBE5E1);
+		background: #F6F6F6;
+		margin-left: 0.32432432432432434rem;
+   }
+	.money{
+		height: 1.7567567567567568rem;
+   }
+	.registeredMoney{
+		color: #FA2802;
+   }
+	.registeredMoney span{
+		color: #8C8C8C;
+   }
+	.newPeople{
+		color: #FA2802;
+   }
+	// 分支机构 
+	.changeRecord1{
+		background: white;
+		width: 100%;
+		// float: left;
+		overflow:hidden;
+		margin-top: .333333rem;
+   }
+	.branch{
+		// height: 1.0810810810810811rem;
+		background: #fff;
+		float: left;
+		width: 100%;
+		// margin-top: 0.40540540540540543rem;
+   }
+	.company{
+		height: 1.2162162162162162rem;
+		background: #fff;
+		padding-left: 0.32432432432432434rem;
+   }
+   .child-view {
+	   height: 0 !important;
+   }

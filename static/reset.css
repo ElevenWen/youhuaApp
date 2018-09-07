@@ -1,0 +1,590 @@
+/* HTML5 Reset :: style.css ---------------------------------------------------------- We have learned much from/been inspired by/taken code where offered from: Eric Meyer :: http://meyerweb.com HTML5 Doctor :: http://html5doctor.com and the HTML5 Boilerplate :: http://html5boilerplate.com -------------------------------------------------------------------------------*/
+/* Let's default this puppy out -------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+main, article, aside, figure, footer, header, nav, section, details, summary {
+	display: block;
+}
+/* Handle box-sizing while better addressing child elements: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html {
+	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
+}
+body{
+	-webkit-overflow-scrolling: touch;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img, object, embed {
+	max-width: 100%;
+}
+/* Note: keeping IMG here will cause problems if you're using foreground images as sprites. In fact, it *will* cause problems with Google Maps' controls at small size. If this is the case for you, try uncommenting the following: #map img {
+	max-width: none;
+}
+*/
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch 
+}
+/* we use a lot of ULs that aren't bulleted. you'll have to restore the bullets within content, which is fine because they're probably customized anyway */
+ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+a {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+/* tables still need cellspacing="0" in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+th {
+	font-weight: bold;
+	vertical-align: bottom;
+}
+td {
+	font-weight: normal;
+	vertical-align: top;
+}
+hr {
+	display: block;
+	height: 1px ;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+input, select {
+	vertical-align: middle;
+}
+pre {
+	white-space: pre;
+   /* CSS2 */
+	white-space: pre-wrap;
+   /* CSS 2.1 */
+	white-space: pre-line;
+   /* CSS 3 (and 2.1 as well, actually) */
+	word-wrap: break-word;
+   /* IE */
+}
+input[type="text"]{
+	outline: none;
+	border:0 
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+	vertical-align: bottom;
+}
+.ie7 input[type="checkbox"] {
+	vertical-align: baseline;
+}
+.ie6 input {
+	vertical-align: text-bottom;
+}
+select, input, textarea {
+	font: 99% sans-serif;
+}
+table {
+	font: inherit;
+	font-size: 100% 
+}
+small {
+	font-size: 85%;
+}
+strong {
+	font-weight: normal;
+}
+td, td img {
+	vertical-align: top;
+}
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+	font-family: monospace, sans-serif;
+}
+/* hand cursor on clickable elements */
+.clickable, label, input[type=button], input[type=submit], input[type=file], button {
+	cursor: pointer;
+}
+/* Webkit browsers add a 0.05405405405405406rem margin outside the chrome of form elements */
+button, input, select, textarea {
+	margin: 0;
+}
+/* make buttons play nice in IE */
+button, input[type=button] {
+	width: auto;
+	overflow: visible;
+	border: none;
+	background: transparent 
+}
+/* scale images in IE7 more attractively */
+.ie7 img {
+	-ms-interpolation-mode: bicubic;
+}
+/* prevent BG image flicker upon hover (commented out as usage is rare, and the filter syntax messes with some pre-processors) .ie6 html {
+	filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
+*/
+/* let's clear some floats */
+.clearfix:after {
+	content: " ";
+	display: block;
+	clear: both;
+	visibility:hidden;
+	zoom:1;
+}
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+#body .mint-toast{
+	z-index: 9999 !important;
+}
+ 
+@media screen and (min-width:20.756756756756758rem){
+	html,body{
+		width: 100% !important;
+   }
+	.fixBottom{
+		width: 100% !important;
+   }
+	.search_box{
+		width: 100% !important;
+   }
+	.wrapS{
+		width: 100% !important;
+   }
+	.footerShopping{
+		width: 100% !important;
+   }
+}
+/* custom */
+/*公用的*/
+html,body{
+	font-family:"PingFang-SC-Medium,Arial,Verdana,Sans-serif";
+	font-size: 0.3783783783783784rem ;
+	line-height:1;
+	width: 100%;
+	height: 100%;
+	position:relative;
+	background-color: #efeff4;
+}
+/* iPhone 和 Android 的浏览器纵向 (Portrate mode) 和橫向 (Landscape mode) 模式皆有自动调整字体大小的功能。 控制它的就是 CSS 中的 -webkit-text-size-adjust。 */
+body {
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: transparent;
+	/* // 页面intpu 按钮的tap后变色 */
+	 background-color: #efeff4;
+	-webkit-overflow-scrolling: touch 
+}
+/* */
+/*body>div:nth-child(1){
+	padding-top: 1.1891891891891893rem!important;
+}
+*/
+a:hover{
+	text-decoration: none;
+}
+;
+a {
+	color: #7e8c8d;
+	text-decoration: none;
+	-webkit-backface-visibility: hidden;
+}
+li {
+	list-style: none;
+}
+i{
+	font-style:normal;
+	display: inline-block;
+}
+/*兼容IOS overflow滑动 效果*? -webkit-overflow-scrolling: touch;
+/* ::-webkit-scrollbar 滚动条整体部分 ::-webkit-scrollbar-thumb 滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条） ::-webkit-scrollbar-track 滚动条的轨道（里面装有Thumb） ::-webkit-scrollbar-button 滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。 ::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去） ::-webkit-scrollbar-corner 边角，即两个滚动条的交汇处 ::-webkit-resizer 两个滚动条的交汇处上用于通过拖动调整元素大小的小控件 */
+em{
+	font-style: normal;
+}
+::-webkit-scrollbar {
+	width: 0rem;
+	height: 0.13513513513513514rem;
+}
+::-webkit-scrollbar-track-piece {
+	background-color: rgba(0, 0, 0, 0.2);
+	-webkit-border-radius: 0.16216216216216217rem;
+}
+::-webkit-scrollbar-thumb:vertical {
+	height: 0rem;
+	background-color: rgba(125, 125, 125, 0.7);
+	-webkit-border-radius: 0.16216216216216217rem;
+}
+::-webkit-scrollbar-thumb:horizontal {
+	width: 0.13513513513513514rem;
+	background-color: rgba(125, 125, 125, 0.7);
+	-webkit-border-radius: 0.16216216216216217rem;
+}
+::-webkit-scrollbar:horizontal{
+	height: 0;
+}
+.keyWordColor{
+	color:red;
+}
+input[readonly="readonly"]{
+	color:#B2B2B2!important;
+}
+input:-webkit-autofill {
+	-webkit-box-shadow : 0 0 0rem 27.027027027027028rem white inset ;
+	box-shadow : 0 0 0rem 27.027027027027028rem white inset ;
+   /*border : 1px solid #CCC !important ;
+	*/
+	height : 0.7297297297297297rem !important ;
+	line-height : 0.7297297297297297rem !important ;
+	border-radius : 0 0.10810810810810811rem 0.10810810810810811rem 0 ;
+}
+/*手机长按取消选中* start*/
+*{
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+/*解决在IOS上input框无法输入内容的问题*/
+input,textarea{
+	-webkit-user-select:auto;
+   /*webkit浏览器*/
+}
+/*手机长按取消选中* end*/
+/*修改首页滑屏样式*/
+.classify .mint-swipe-indicators .mint-swipe-indicator{
+	vertical-align: middle;
+	height: 0.05405405405405406rem;
+	background-color: #b2b2b2;
+	opacity: 1;
+}
+.classify .mint-swipe-indicators .is-active{
+	width: 0.21621621621621623rem;
+    height: 0.21621621621621623rem;
+    background-color: #ffffff;
+    border: solid 1px #868686;
+    opacity: 1;
+    border-radius: 50%;
+}
+/*修改首页滑屏样式 --end*/
+/* 优惠券 */
+#coupon .mint-tab-container{
+	height: 85.99%;
+}
+#coupon .mint-navbar{
+	height: 2.4864864864864864rem;
+}
+/*我的订单*/
+.toDetail .mint-tab-item-label{
+	font-size: 0.40540540540540543rem;
+}
+body /deep/ .mint-toast{
+	z-index: 20000 !important;
+}
+#discover .mint-tab-item{
+	width: 100%;
+}
+/* 领券中心 */
+#getCoupon .mint-navbar{
+	padding-top: 12%;
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+#getCoupon .mint-tab-item{
+	height: 100%;
+}
+#getCoupon .mint-tab-container{
+	height: 86.4%;
+}
+#getCoupon .mint-tab-container-wrap{
+	height: 100%;
+}
+#getCoupon .mint-tab-container-wrap .mint-tab-container-item{
+	height: 100%;
+}
+#getCoupon .mint-tab-container-wrap .mint-tab-container-item .dataNull{
+	height: 100%;
+}
+#getCoupon .mint-tab-item-label{
+	font-size: 0.4rem;
+}
+/*下拉加载*/
+#homeWrap .mint-loadmore-bottom{
+	height: 1.3513513513513513rem;
+	margin-bottom: 1.3513513513513513rem;
+}
+/* 评论页面 滚动===没有更多了 */
+#newsComment ._v-container>._v-content>.loading-layer{
+	bottom: 1.2162162162162162rem;
+}
+#newsComment ._v-container>._v-content{
+	padding-bottom: 3.8378378378378377rem;
+}
+/* 优惠券tab栏 */
+#coupon .mint-navbar .mint-tab-item{
+	padding: 0.4594594594594595rem 0; 
+}
+#coupon .mint-navbar .mint-tab-item.is-selected{
+	margin-bottom: -0.08108108108108109rem;
+}
+#coupon .mint-tab-item-label{
+	font-size: 0.4rem !important;
+	line-height: 1;
+}
+#coupon .mint-tab-item-icon{
+	width: 0.6486486486486487rem !important;
+	height: 0.6486486486486487rem !important;
+	margin: 0 auto 0.13513513513513514rem !important;
+}
+/* 编辑收货地址三级菜单 */
+ #shippingAddress .picker-items{
+	font-size: 0.48rem;
+}
+#shippingAddress .picker-slot{
+	font-size: 0.48rem;
+}
+/* #shippingAddress .picker-slot-wrapper{
+	height: 2.88rem !important;
+}   */
+/* #shippingAddress .picker-item.picker-selected{
+	height: 0.972972972972973rem !important;
+	line-height: 0.972972972972973rem !important;
+} */
+/* #shippingAddress .picker-item{
+	height: 0.972972972972973rem !important;
+	line-height: 0.972972972972973rem !important; 
+} */
+   /* 三级联动样式重置 : 编辑收货地址 报表 */
+.picker-slot-wrapper{
+	height: 2.88rem !important;
+}  
+
+.picker-items{
+	font-size: 0.48rem!important;
+}
+.picker-slot{
+	font-size: 0.48rem!important;
+}
+
+/* body .mint-indicator-text{
+	margin-top: 0.2702702702702703rem;
+	font-size: 0.43243243243243246rem;
+} */
+
+
+
+
+body .mint-indicator-wrapper{
+	padding: 0.5405405405405406rem !important;
+	border-radius: 0.13513513513513514rem;
+	background: rgba(0, 0, 0, 0.7);
+} 
+body .mint-spinner-fading-circle{
+	width: 0.8648648648648649rem !important;
+	height: 0.8648648648648649rem !important;
+}
+/* 我的信息选择性别弹出框 */
+#myInformation,#goCompany1 .mint-actionsheet-list{
+	margin-bottom: 0.13513513513513514rem;
+}
+#myInformation,#goCompany1 .mint-actionsheet-listitem{
+	width: 100%;
+	height: 1.2162162162162162rem;
+	line-height: 1.2162162162162162rem;
+	font-size: 0.4864864864864865rem;
+}
+#myInformation,#goCompany1 .mint-actionsheet-button {
+	width: 100%;
+	height: 1.2162162162162162rem;
+	line-height: 1.2162162162162162rem;
+	font-size: 0.4864864864864865rem;
+}
+
+/* 购物车删除按钮重置*/
+#cart .items-list /deep/ .mint-cell-value{
+	width: 100%;
+	display: block;
+
+}
+
+#cart  .items-list /deep/  .mint-cell-swipe-buttongroup{
+	width: 100%;
+}
+#cart  .items-list /deep/ .mint-cell-swipe-button{
+	/* width: 100%; */
+	display: flex;
+	align-items: center;
+	width: 129px;
+	justify-content: center;
+	font-size: 0.4rem;
+}
+/* 我的收藏左滑取消收藏 */
+#collection .mint-cell-swipe-button{
+	padding: 0 0.2702702702702703rem;
+}
+
+/* 提示 Toast弹窗样式重置 */
+.mint-toast{
+    padding: 0.266667rem!important;
+    border-radius:0.133333rem!important;
+}
+.mint-toast-text{
+    font-size: 0.373334rem!important;
+}
+
+
+/* 加载中提示样式重置 */
+.mint-indicator-text{
+    font-size: 0.373334rem!important;
+}
+
+/* 我的订单页面 样式重置 */
+#orderDetail /deep/ .mint-navbar{
+    height: 1.386667rem;
+   
+}
+#orderDetail /deep/ .mint-tab-item{
+	padding: 0px;
+    line-height: 1.386667rem;
+}
+#orderDetail /deep/ .mint-tab-item-label{
+    line-height: inherit;
+}
+
+/* 商品详情页二级tab切换 */
+.productDetails /deep/ .mint-tab-item-label{
+	font-size: 0.3459459459459459rem !important;
+}
+
+/* 商品详情页服务介绍图片 */
+.productDetails #content img{
+	width: 100%;
+}
+.productDetails .mint-tab-container-wrap{
+    /* margin-top: 0.386667rem !important; */
+}
+/* 购物车删除提示 */
+.mint-msgbox{
+	width: 86% !important;
+	/* height: 19.5% !important; */
+	font-size: 50px;
+} 
+ /* 修改弹框 */
+.mint-msgbox-header{
+	/* height: 0.813333rem!important; */
+	line-height: 0.813333rem!important; 
+}
+.mint-msgbox-title{
+	font-size: 0.4162162162162162rem  !important;
+	margin-top: 0.1756756756756757rem !important;
+	
+}
+.mint-msgbox-content{
+	line-height: 1.386486486486487rem  !important;
+	height: 1.386486486486487rem  !important;
+}
+.mint-msgbox-message{
+	line-height: 1.1rem !important;
+	height: 0.3813513513513513rem  !important; 
+    font-size: 0.3813513513513513rem !important;
+}
+.mint-msgbox-cancel{
+	height: 1.0867567567567566rem  !important;
+	font-size: 0.3510810810810811rem !important;
+    line-height: 1.0867567567567566rem  !important;
+}
+.mint-msgbox-confirm{
+	height: 1.0867567567567566rem  !important;
+	font-size: 0.3510810810810811rem !important;
+    line-height: 1.0867567567567566rem !important;
+}
+#sous /deep/ .mint-msgbox{
+	height: auto !important;
+}
+/* 新闻列表 == 没有更多了 */
+#enterpriseCenter .no-data-text{
+    font-size: .4rem !important;
+}
+
+
+/* 没有更多全局样式 */
+#appApp  /deep/ .mint-loadmore-bottom{
+  font-size:0.346667rem;
+}
+
+#appApp  /deep/ .mint-cell-value{
+	font-size:0.346667rem; 
+}
+
+/* 时间和地址三级联动:
+* report.vue  /  accountBook.vue  /
+*  全局样式 谨慎修改
+*
+*/
+ /* 修改picker  */
+ #appApp  /deep/   .picker-item{
+	font-size: 0.4rem;   
+ }
+
+ /* 价格.00不要加粗 */
+ b{
+	 font-weight: normal;
+ }
+
+
+ /* 全局底部弹框 */
+ #appApp  /deep/  .mint-actionsheet-listitem{
+	 height: 1.2rem;
+	 line-height: 1.2rem;
+	 font-size: 0.48rem;
+ }
+ #appApp  /deep/  .mint-actionsheet-button{
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: 0.48rem;
+}
+

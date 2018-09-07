@@ -1,0 +1,464 @@
+//头部
+ #accountTax{
+    height: 100%;
+}
+ #accountTax .back{
+     height: 1.1891891891891893rem;
+     width: 100%;
+     text-align: center;
+     line-height: 1.162162162162162rem;
+     font-size: 0.48rem;
+     color: #1F1F1F;
+     .border-1pxB(#EBE5E1);
+     background:white;
+     position: fixed;
+     z-index: 9;
+}
+ #accountTax .return{
+     padding-left: 0.40540540540540543rem;
+     height: 1.0810810810810811rem;
+     width: 0.6486486486486487rem;
+     .bg-image('../../assets/images/tabBar/nav_back');
+     background-size: 100%;
+     background-position: 0.40540540540540543rem 0.24324324324324326rem;
+     position: absolute;
+     left: 0;
+}
+ #accountTax .triangle{
+     border-left: 0.10810810810810811rem solid transparent;
+     border-right: 0.10810810810810811rem solid transparent;
+     border-top: 0.13513513513513514rem solid #333333;
+     padding-top: 0.08108108108108109rem;
+     display: inline-block;
+}
+ #accountTax .accountTax-content{
+     width: 94%;
+     position: absolute;
+     left: 0;
+     top: 2.891891891891892rem;
+     margin: 0 3%;
+}
+
+ 
+ .tab-forms{
+     width: 94%;
+     height: 1.026667rem;
+     border: 1px solid #ff3e08;
+     margin: 0.32432432432432434rem auto;
+     border-radius: 0.10810810810810811rem;
+     background: #fff;
+     position: absolute;
+     top: 1.1891891891891893rem;
+     left: 3%;
+     ul{
+         display: flex;
+         li{
+             flex: 1;
+             line-height: 1.027027027027027rem;
+             text-align: center;
+             font-size: 0.3783783783783784rem;
+             color: #ff3e08;
+        }
+         li:nth-of-type(2){
+             border-left: 1px solid #ff3e08;
+             border-right: 1px solid #ff3e08;
+        }
+         li.active{
+             background: #ff3e08;
+             color: #fff;
+        }
+    }
+}
+ //日期选择 
+ #accountTax .dateChoosed{
+     height: 1.3513513513513513rem;
+     display: flex;
+     position: fixed;
+     width: 100%;
+     z-index: 999;
+     top: 1.1891891891891893rem;
+     &:after {
+         display: block;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         border-top: 1px solid #ccc;
+         content: " ";
+    }
+}
+ #accountTax .preIssue,.nextIssue{
+     background: #ff5c3f;
+     color: #fff;
+     flex: 1;
+     line-height: 1.3513513513513513rem;
+     text-align: center;
+     font-size: 0.3783783783783784rem;
+}
+ #accountTax .midIssue{
+     background: #fa2802;
+     width: 5.54054054054054rem;
+     color: #fff;
+     line-height: 1.3513513513513513rem;
+     text-align: center;
+     font-size: 0.3783783783783784rem;
+     .icon{
+         width: 0.2972972972972973rem;
+         height: 0.21621621621621623rem;
+         .bg-image('../../assets/images/report/triangle');
+         background-size: 100%;
+    }
+}
+ #accountTax .tab{
+     background: #fff;
+     height: 1.2162162162162162rem;
+     .border-1px(#8c8c8c);
+     border-bottom: none;
+     ul{
+         display: flex;
+         height: 100%;
+         li{
+             flex: 1;
+             text-align: center;
+             font-size: 0.40540540540540543rem;
+             color: #333;
+             span{
+                 display: inline-block;
+                 height: 0.6756756756756757rem;
+                 width: 100%;
+                 line-height: 0.6756756756756757rem;
+                 margin-top: 0.2702702702702703rem;
+            }
+        }
+         li:nth-of-type(1) span{
+             border-right: 1px solid #ebe5e1;
+        }
+         li.active{
+             color: #fa2802;
+             border-bottom: 0.05405405405405406rem solid #fa2802;
+        }
+    }
+}
+ #accountTax .content{
+     height: 0.8378378378378378rem;
+     background: #e6e6e6;
+     .border-1px(#8c8c8c);
+     ul{
+         display: flex;
+         li{
+             flex: 1;
+             line-height: 0.8108108108108109rem;
+             text-align: center;
+             font-size: 0.3783783783783784rem;
+             color: #333;
+        }
+         li:nth-of-type(2){
+             position: relative;
+             &:after {
+                 display: block;
+                 position: absolute;
+                 right: 0;
+                 top: 0;
+                 left:-1px;
+                 height: 100%;
+                 border-left: 1px solid #8c8c8c;
+                 border-right: 1px solid #8c8c8c;
+                 content: " ";
+                 -webkit-transform: scaleX( 0.5,0.5);
+                 transform: scaleX( 0.5,0.5);
+            }
+        }
+    }
+}
+ #accountTax .main-content .exhibition{
+     height: 1.2432432432432432rem;
+     padding: 0.35135135135135137rem 0 0 0.32432432432432434rem;
+     color: #e6a668;
+     background: #fff;
+     line-height: 0.5135135135135135rem;
+     position: relative;
+     overflow: hidden;
+     .border-1px(#8c8c8c);
+     border-top: none;
+     span:nth-of-type(1){
+         float: left;
+         margin-right: 0.13513513513513514rem;
+         display: block;
+         width: 0.40540540540540543rem;
+         height: 0.48rem;
+         .bg-image('../../assets/images/report/table');
+         background-size: 100%;
+    }
+     span:nth-of-type(2){
+         position: absolute;
+         right: 0.5405405405405406rem;
+         top: 0.5405405405405406rem;
+         display: block;
+         width: 0.2972972972972973rem;
+         height: 0.16216216216216217rem;
+         .bg-image('../../assets/images/report/downArrow');
+         background-size: 100%;
+    }
+     span.up{
+         transition: 0.3s;
+         .bg-image('../../assets/images/report/upArrow');
+    }
+}
+ #accountTax .main-content .floatingCapital{
+     background: #fff;
+     overflow: hidden;
+     border-top: none;
+     ul{
+         display: flex;
+         li{
+             height: 1.2162162162162162rem;
+             overflow: hidden;
+             flex: 1;
+             font-size: 0.3783783783783784rem;
+             color: #666666;
+             display: flex;
+             align-items: center;
+             line-height: 0.48rem;
+             padding: 0 0.13513513513513514rem 0 0.2702702702702703rem;
+             border-bottom: 1px solid #8c8c8c;
+        }
+         li:nth-child(1){
+             border-left: 1px solid #8c8c8c;
+        }
+         li:nth-child(3){
+             border-right: 1px solid #8c8c8c;
+        }
+         li:nth-of-type(1),li:nth-of-type(2){
+             position: relative;
+             &:after {
+                 display: block;
+                 position: absolute;
+                 right: 0;
+                 top: 0;
+                 height: 100%;
+                 border-right: 1px solid #8c8c8c;
+                 content: " ";
+                 -webkit-transform: scaleX( 0.5);
+                 transform: scaleX( 0.5);
+            }
+        }
+         li:nth-of-type(2),li:nth-of-type(3){
+             justify-content:flex-end;
+        }
+    }
+}
+ #accountTax .main-content .floatingCapital:last-of-type ul li{
+     color: #333333;
+     font-weight: bold;
+}
+ .floating{
+     margin-bottom: 1.4054054054054055rem;
+     display: block;
+}
+ .floating .floatingCapital:nth-last-child(1){
+     border-bottom: 1px solid #fff;
+}
+ //底部 
+ #accountTax .bottom{
+     width: 100%;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     height: 1.3513513513513513rem;
+     padding: 0 0.35135135135135137rem;
+     line-height: 1.3513513513513513rem;
+     background: #f5f5f5;
+     font-size: 0.40540540540540543rem;
+     display: flex;
+     &:after {
+         display: block;
+         position: absolute;
+         left: 0;
+         top: 0;
+         width: 100%;
+         border-top: 1px solid #c0c0c0;
+         content: " ";
+         -webkit-transform: scaleY( 0.5);
+         transform: scaleY( 0.5);
+    }
+     span{
+         flex: 1;
+    }
+     span:nth-of-type(2),span:nth-of-type(3){
+         color: #fa2802;
+         text-align: right;
+    }
+}
+ #accountTax .liabilities{
+     line-height: 0.5405405405405406rem;
+     padding-top: 0.13513513513513514rem;
+     align-items: center;
+     span:nth-of-type(1){
+         display: inline-block;
+         width: 4.081081081081081rem;
+    }
+}
+ //mint-ui 重写
+ #main-content{
+     width: 100%;
+     height: 100%;
+     .mint-tab-container{
+         height: 100%;
+    }
+}
+ .scroll-content{
+     width: 100%;
+     overflow: auto;
+     height: 100%;
+     .scroll-body{
+         -webkit-overflow-scrolling: touch;
+    }
+}
+ @media screen and (max-width:8.64864864864865rem){
+     .mint-tab-container-item{
+         min-height: 12.162162162162161rem;
+    }
+}
+ .mint-tab-container-item{
+     min-height: 12.432432432432432rem;
+}
+ //动画效果 
+ .list-leave-active,.list-enter-active{
+     transition: all 0.3s ease;
+}
+ .list-leave-active,.list-enter{
+     height:0rem !important;
+}
+ .list-leave,.list-enter-active{
+     height: 13.378378378378379rem;
+}
+ //日期弹出框效果 
+ 
+ .date-leave-active,.date-enter-active{
+     transition: all 0.3s ease;
+}
+ .date-leave-active,.date-enter{
+     height:0rem !important;
+}
+ .date-leave,.date-enter-active{
+     height: 7.027027027027027rem;
+}
+ //日期弹出框 .
+.mask{
+     width: 100%;
+     position: fixed;
+     left: 0;
+     top: 0;
+     bottom: 0;
+     z-index: 10;
+     background: rgba(0,0,0,0.4);
+}
+ .datePickerPop{
+    //  height:6.933333rem;
+     width: 100%; 
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     background: #fff;
+     z-index: 20;
+     .datePickerHead{
+         height: 1.1891891891891893rem;
+         background: #ededed;
+         display: flex;
+         text-align: center;
+         line-height: 1.1891891891891893rem;
+         .cancel,.enter{
+             flex: 1;
+             font-size: 0.426667rem;
+             color: #30a1f8;
+        }
+         .choose{
+             width: 6.72972972972973rem;
+             font-size: 0.48rem;
+             color: #000000;
+        }
+    }
+     .datePicker-content{
+        //  height: 5.837837837837838rem;
+         .year-month{
+            //  height: 0.972972972972973rem;
+             display: flex;
+             li{
+                 flex: 1;
+                 text-align: center;
+                 line-height: 0.972972972972973rem;
+                 font-size: 0.426667rem;
+                 color: #000;
+            }
+        }
+    }
+}
+ //修改picker 
+ #accountTax  /deep/   .picker-item{
+    // font-size: 0.4rem;   
+}
+
+ //现金流量表
+  #cash-content{
+     background: #fff;
+}
+ #cash-content .cash{
+     height: 100%;
+     .bg-image('../../assets/images/mine/nullCart');
+     background-size: 70%;
+     background-position: 50% 5%;
+     line-height: 16.027027027027028rem;
+     text-align: center;
+     font-size: 0.32rem;
+}
+ //无数据 
+ #accountTax .cash{
+     background: #fff;
+     .bg-image('../../assets/images/mine/nullCart');
+     background-size: 70%;
+     background-position: 50% 5%;
+     line-height: 16.027027027027028rem;
+     text-align: center;
+}
+ //利润表 
+ #operation-content .operation-show{
+     width: 100%;
+     background: #fff;
+     ul{
+         display: flex;
+         .border-1px(#8c8c8c);
+         border-top: none ;
+         li{
+             overflow: hidden;
+             flex: 1;
+             font-size: 0.3783783783783784rem;
+             color: #666666;
+             display: flex;
+             padding: 0.426667rem 0.13513513513513514rem 0.426667rem 0.2702702702702703rem;
+             line-height: 0.48rem;
+        }
+         li:nth-of-type(1),li:nth-of-type(2){
+             position: relative;
+             &:after {
+                 display: block;
+                 position: absolute;
+                 right: 0;
+                 top: 0;
+                 height: 100%;
+                 border-right: 1px solid #8c8c8c;
+                 content: " ";
+                 -webkit-transform: scaleX( 0.5);
+                 transform: scaleX( 0.5);
+            }
+        }
+         li:nth-of-type(2),li:nth-of-type(3){
+             justify-content:flex-end;
+             align-items: center;
+        }
+    }
+     ul:nth-of-type(1) li{
+         color: #333333;
+         font-weight: bold;
+    }
+}
+ 

@@ -1,0 +1,239 @@
+.c {
+  background: red
+}
+
+a {
+  text-decoration: none;
+}
+
+.border-1px(@color) {
+  position: relative;
+  border: 1px  solid @color;
+}
+
+.border-2px(@color) {
+  position: relative;
+  border:2px solid @color;
+}
+
+.border-1pxT(@color) {
+  position: relative;
+  &:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-top:  1px   solid @color;
+    content: " ";
+  }
+}
+
+.border-1pxB(@c) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom:  1px   solid @c;
+    content: " ";
+  }
+}
+
+.border-1pxC(@c) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom:  1px   dashed @c;
+    content: " ";
+  }
+}
+
+.border-none() {
+  &:after {
+    display: none;
+  }
+}
+
+.clearfix {
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
+
+.c(@c) {
+  color: @c;
+}
+
+.font9 {
+  font-size: 0.32432432432432434rem;//浏览器默认微0.32432432432432434rem 
+  display: inline-block;
+  transform: scale(0.75);
+}
+
+.font10 {
+  font-size: 0.32432432432432434rem;//浏览器默认微0.32432432432432434rem 
+  display: inline-block;
+  transform: scale(0.83333);
+}
+
+.font11 {
+  font-size: 0.32432432432432434rem;//浏览器默认微0.32432432432432434rem 
+  display: inline-block;
+  transform: scale(0.91666);
+}
+
+.cf0 {
+  color: (#000);
+}
+
+.cff8 {
+  color: #30A1F8;
+}
+
+.cDefault {
+  color: #000;
+}
+
+.cf3 {
+  color: #333;
+}
+
+.cf9 {
+  color: #999;
+}
+
+.cff {
+  color: (#FFF);
+}
+
+.cf6 {
+  color: (#666666);
+}
+
+.cf1F {
+  color: #1F1F1F;
+}
+
+.cf8C {
+  color: #8C8C8C;
+}
+
+.cfB2 {
+  color: #B2B2B2;
+}
+
+.cf802 {
+  color: #FA2802;
+}
+
+.fs38 {
+  font-size: 38px;
+}
+
+.1f8 {
+  color: #30A1F8;
+}
+
+.fs9 {
+  font-size: 0.2702702702702703rem;
+  display: inline-block;
+  transform: scale(0.81);
+}
+.fs32 {
+  font-size: 1.027027027027027rem;
+}
+.fs15 {
+  font-size: 0.40540540540540543rem;
+}
+.fs13 {
+  font-size: 0.35135135135135137rem;
+}
+.fs11 {
+  -webkit-transform: scale(0.9);
+  font-size: 0.2972972972972973rem;
+}
+.fs12 {
+  font-size: 0.32432432432432434rem;
+}
+.fs16 {
+  font-size: 0.43243243243243246rem;
+}
+
+.themeC {
+  color:#ff6b5f; 
+}
+
+.cf45 {
+  color: #45B0DA  ;
+}
+
+
+.nowPrice(@s:0.32rem){ 
+  b{
+    font-weight: normal; 
+    font-size:@s;
+  }
+}
+
+//客户聊天
+
+#LRMINIBar {
+  width: 0.40540540540540543rem;
+  height: 0.40540540540540543rem;
+  right: 0.6756756756756757rem !important;
+  bottom: 96% !important;
+}
+#LR-BTN {
+  border: none !important;
+  width: 0.5405405405405406rem !important;
+  height: 0.40540540540540543rem !important;
+  border-radius: 0.40540540540540543rem 0.40540540540540543rem 0.40540540540540543rem 0.13513513513513514rem !important;
+  transform: rotate(-14deg);
+  background: transparent !important;
+}
+#LR-BTN-ICON {
+  margin: - 1px  0rem 0rem -0.05405405405405406rem !important;
+  transform: rotate(14deg);
+  background-image: url(../../src/assets/images/tabBar/messageNewS@3x.png) !important;
+  background-size: 0.7027027027027027rem !important;
+}
+#LR-CIRCLE {
+  top: 0rem !important;
+  font-size: 0.32432432432432434rem !important;
+  line-height: 0.40540540540540543rem !important;
+  background: red !important;
+  left: 0.4864864864864865rem !important;
+  border: none !important;
+  width: 0.40540540540540543rem !important;
+  height: 0.40540540540540543rem !important;
+  transform: rotate(13deg);
+}
+#LRMINIBar #LR-BUBBLE {
+  display: none !important;
+}
+#LRdiv0 #LR-BUBBLE {
+  display: none !important;
+}
+#LRfloater0 {
+  display: none !important;
+}
+#LRdiv2 {
+  border:  1px  solid red;
+}
+#headerBox {
+  display: none;
+}
+

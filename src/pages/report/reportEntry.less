@@ -1,0 +1,320 @@
+/*头部*/
+#reportEntry .back{
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    line-height: 45px;
+    font-size: 0.4864864864864865rem;
+    color: #1F1F1F;
+    background:white;
+    .border-1pxB(#ebe5e1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+#reportEntry .return{
+    padding-left: 0.40540540540540543rem;
+    height: 1.0810810810810811rem;
+    width: 0.6486486486486487rem;
+    .bg-image('../../assets/images/tabBar/nav_back');
+    background-size: 100%;
+    background-position: 0.40540540540540543rem 0.24324324324324326rem;
+    position: absolute;
+    left: 0;
+}
+#reportEntry .newcomer{
+    position: absolute;
+    right: 2%;
+    font-size: 0.40540540540540543rem;
+    color: #333333;
+}
+//轮播图 
+#reportEntry .reportEntry-banner{
+    height: 4.594594594594595rem;
+    background: #fff;
+}
+#reportEntry .company-search{
+    background: #fff;
+    padding-left: 0.32432432432432434rem;
+    border-bottom: 1px solid #ebe5e1;
+    .search-result{
+        height: 1.3243243243243243rem;
+        position: relative;
+        h3{
+            font-size: 0.32rem;
+        }
+        li{
+            padding-left: 0.2702702702702703rem;
+        }
+        
+        .order{
+            width: 2.1333rem;
+            height: 0.7466rem;
+            border: 1px solid #fa2802;
+            font-size: 0.3733rem;
+            color: #fa2802;
+            line-height: 0.7466rem;
+            text-align: center;
+            border-radius: 0.3733rem;
+            position: absolute;
+            right: 0.3333rem;
+            top: 0.3066rem;
+        }
+        
+        .icon{
+            line-height: 1.2702702702702702rem;
+            padding-top: 0.08108108108108109rem;
+            float: left;
+            span{
+                display: inline-block;
+                width: 0.40540540540540543rem;
+                height: 0.3783783783783784rem;
+                padding-top: 0.05405405405405406rem;
+                .bg-image('../../assets/images/report/computer');
+                background-size: 100%;
+           }
+       }
+        h3{
+            float: left;
+            line-height: 1.3513513513513513rem;
+            padding-left: 0.1891891891891892rem;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+       }
+        .down_arrow2{
+            float: right;
+            width: 0.35135135135135137rem;
+            height: 0.1891891891891892rem;
+            .bg-image('../../assets/images/report/down_arrow2');
+            background-size: 100%;
+            margin-top: 0.5945945945945946rem;
+            margin-right: 0.32432432432432434rem;
+       }
+   }
+    .search{
+        height: 0.4864864864864865rem;
+        position: relative;
+        .search-bar{
+            background: #fff;
+            width: 97%;
+            height: 0.9333rem;
+            border: 1px solid #cccccc;
+            
+            display: flex;
+            position: absolute;
+            bottom: 0rem;
+            align-items:center ;
+            div{
+                width: 0.8919rem; 
+                height: 100%;
+                .bg-image('../../assets/images/report/search');
+                background-size: 50%;
+                background-position: 0.2703rem 0.2rem;
+           }
+            input{
+                flex: 1;
+                height: 0.87rem;
+                padding: 0;
+                line-height: 1;
+           }
+            input::-webkit-input-placeholder{
+                color: #b2b2b2;
+                font-size: 0.3783783783783784rem;
+           }
+       }
+   }
+}
+
+
+
+#reportEntry .company-search .search .search-list{
+    position: absolute;
+    left: 0;
+    top: 0.6216216216216216rem;
+    width: 97%;
+    min-height: 100%;
+    background: white;
+    z-index: 9;
+    box-shadow: 0 0 1px 0.05405405405405406rem #efefef;
+    overflow: auto;
+}
+
+
+#reportEntry .company-search .search .search-list ul li{
+    font-size: 0.3783783783783784rem;
+    line-height: 1.2162162162162162rem;
+    height: 1.2162162162162162rem;
+    
+    .border-1pxB(#ebe5e1);
+}
+
+#reportEntry .company-search .search .search-list .search-record li{
+    padding: 0 0.2702702702702703rem;
+    height: 1.0810810810810811rem;
+    line-height: 1.0810810810810811rem;
+    span{
+        width: 0.40540540540540543rem;
+        height: 0.40540540540540543rem;
+        float: right;
+        display: block;
+        background-size: 100% 100%;
+        margin: 0.35135135135135137rem 0rem;
+        .bg-image('../../assets/images/tabBar/deleteIcon');
+   }
+}
+#reportEntry .company-search .search .search-list .search-record .history{
+    font-size: 0.40540540540540543rem;
+}
+
+//mint-ui 重写 
+
+#reportEntry .wrap-content .reportEntry-banner /deep/ .mint-swipe-indicators{
+    bottom: 0.6216216216216216rem;
+}
+
+
+
+//常用功能
+#reportEntry .title{
+    height: 0.9459459459459459rem;
+ padding-left: 0.35135135135135137rem;
+ line-height: 0.9459459459459459rem;
+ font-size: 0.35135135135135137rem;
+ color: #333333;
+  
+ 
+    .border-1pxB(#ebe5e1);
+    padding-right: 0.6756756756756757rem;
+}
+
+#reportEntry .useted-fun{
+    height: 6.72972972972973rem;
+    background: #fff;
+    border-top: 0.32432432432432434rem solid #efeff4;
+    border-bottom: 0.32432432432432434rem solid #efeff4;
+    .content{
+        height: 5.135135135135135rem;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0.32432432432432434rem;
+            li{
+                width: 48%;
+                height: 2.081081081081081rem;
+                display: flex;
+                box-shadow: 0 0 0.05405405405405406rem #efefef;
+                .icon{
+                    padding: 0.43243243243243246rem 0.2702702702702703rem;
+                    span{
+                        display: block;
+                        width: 1.2162162162162162rem;
+                        height: 1.2162162162162162rem;
+                        background-size: 100%;
+                   }
+               }
+                .list-title{
+                    flex: 1;
+                    h3{
+                        margin: 0.5945945945945946rem 0 0.1891891891891892rem 0;
+                        font-size: 0.43243243243243246rem;
+                   }
+                    h4{
+                        color: #969696;
+                        font-size: 0.32432432432432434rem;
+                   }
+               }
+           }
+            li:nth-child(odd){
+                margin-right: 4%;
+           }
+            li:nth-of-type(1),li:nth-of-type(2){
+                margin-bottom: 0.32432432432432434rem;
+           }
+            .tax .icon span{
+                .bg-image('../../assets/images/report/tax');
+           }
+            .reportForms .icon span{
+                .bg-image('../../assets/images/report/reportForms');
+           }
+            .oneTax .icon span{
+                .bg-image('../../assets/images/report/oneTax');
+           }
+            .courier .icon span{
+                .bg-image('../../assets/images/report/courier');
+           }
+       }
+   }
+}
+
+
+
+//新闻
+#reportEntry .news{
+    background: #fff;
+    .content ul li{
+        padding: 0.40540540540540543rem 0.2702702702702703rem 0.2972972972972973rem 0.35135135135135137rem;
+        .border-1pxB(#ebe5e1);
+        h3{
+            font-size: 0.40540540540540543rem;
+            color: #323232;
+            margin-bottom: 0.2702702702702703rem;
+            line-height: 0.5405405405405406rem;
+       }
+        span{
+            font-size: 0.32432432432432434rem;
+            color: #999999;
+       }
+        span:nth-of-type(1){
+            margin-right: 0.2972972972972973rem;
+       }
+   }
+}
+#reportEntry .news .title span{
+    float: right;
+    position: relative;
+    font-size: 13;
+    color: #666;
+    i{
+        width: 0.1891891891891892rem;
+        height: 0.35135135135135137rem;
+        .bg-image('../../assets/images/report/right_arrow');
+        background-size: 100%;
+        margin-left: 0.13513513513513514rem;
+        position: absolute;
+        top: 0.2972972972972973rem;
+   }
+}
+#reportEntry .wrap{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    bottom: 0;
+    
+    .wrap-content{
+        overflow: scroll;
+//      height: 100%;
+        background: #fff;
+        -webkit-overflow-scrolling: touch;
+   }
+}
+#reportEntry .wrap.active{
+    overflow: hidden;
+}
+
+
+
+ //修改picker 
+ #reportEntry .datePicker-content /deep/ .picker{
+
+}
+ #reportEntry  /deep/   .picker-items{
+     position: static;
+     height: 6.933333rem;
+}
+ #reportEntry   /deep/ .picker .picker-center-highlight{
+     top: 65%;
+}

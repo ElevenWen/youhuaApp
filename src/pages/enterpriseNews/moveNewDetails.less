@@ -1,0 +1,373 @@
+@import "../../common/index.less";
+ @rem:46.875rem;
+ #moveNewDetails{
+     width: 100%;
+     background-color: #efeff4;
+     position: relative;
+     //overflow: hidden;
+     .movieNewConten{
+         position: fixed;
+         left: 0;
+         top: 0;
+         z-index: 100;
+         width: 100%;
+         background-color: #ffffff;
+         //border-bottom: 1px solid #ebe5e1;
+         .movieWrap{
+             width: 100%;
+             height: 6.45945945945946rem;
+             background-color: black;
+             text-align: center;
+             p{
+                 padding-top: 2.027027027027027rem;
+                 font-size: 0.3783783783783784rem;
+                 line-height: 0.5405405405405406rem;
+                 color: #cacaca;
+            }
+             span{
+                 padding: 0.05405405405405406rem 0.2702702702702703rem;
+                 background-color: #000000;
+                 border-radius: 0.10810810810810811rem;
+                 border: solid 1px #ffffff;
+                 font-size: 0.40540540540540543rem;
+                 line-height: 1.8918918918918919rem;
+                 color: #ffffff;
+            }
+             .backImg{
+                 position: absolute;
+                 left: 0.40540540540540543rem;
+                 top:0.40540540540540543rem;
+                 width: 0.5675675675675675rem;
+                 //height: 1rem;
+                 z-index: 9999;
+            }
+             .viodceImg{
+                 position: absolute;
+                 right: 0.40540540540540543rem;
+                 top:0.40540540540540543rem;
+                 width: 0.43243243243243246rem;
+                 z-index: 9999;
+            }
+        }
+         .dess{
+             font-family: PingFang-SC-Bold;
+             padding: 0.13513513513513514rem 0.2702702702702703rem;
+             .originateAndShart{
+                 position: relative;
+                 font-size: 0.32432432432432434rem;
+                 line-height: 0.7297297297297297rem;
+                 color: #999999;
+                 .shart{
+                     padding-left: 0.8108108108108109rem;
+                     position: absolute;
+                     right: 0;
+                     bottom: 0;
+                     .bg-image('../../assets/images/tabBar/zfx_share');
+                     background-size: 0.40540540540540543rem 0.40540540540540543rem;
+                     background-position: 0.2702702702702703rem;
+                }
+            }
+        }
+    }
+     .scrollerWrap{
+         width: 100%;
+         height: 100%;
+         padding-top: 7.4324324324324325rem;
+         position: absolute;
+         left: 0;
+         bottom: 1.2162162162162162rem;
+         overflow-y: auto;
+         top: 0rem;
+         // overflow-x: hidden;
+         //overflow-y: auto;
+         .scroller{
+             h2{
+                 background-color: #ffffff;
+                 padding: 0.2702702702702703rem 0.2702702702702703rem;
+                 font-weight: bold;
+                 font-size: 0.4864864864864865rem;
+                 line-height: 0.6216216216216216rem;
+                 color: #333333;
+            }
+             //相关商品 
+             .ofProduct{
+                 margin-top: 0.2702702702702703rem;
+                 padding-bottom: 1px;
+                 width: 100%;
+                 background-color: #ffffff;
+                 .title{
+                     padding: 0 0.2702702702702703rem;
+                     width: 100%;
+                     height: 1.2162162162162162rem;
+                     font-size: 0.40540540540540543rem;
+                     line-height: 1.2162162162162162rem;
+                     color: #333333;
+                     border-bottom: solid 1px #ebe5e1;
+                }
+                 .proDuct{
+                     padding: 0.35135135135135137rem;
+                     margin: 0.2702702702702703rem auto;
+                     width: 9.486486486486486rem;
+                     height: 3.108108108108108rem;
+                     background-color: #f4f4f4;
+                     overflow: hidden;
+                     .imgWrap{
+                         float: left;
+                         width: 2.4324324324324325rem;
+                         height: 2.4324324324324325rem;
+                         border: 1px solid #CCCCCC;
+                    }
+                     .desList{
+                         float: left;
+                         margin-left: 0.2702702702702703rem;
+                         width: 6.081081081081081rem;
+                         height: 2.7027027027027026rem;
+                         h3{
+                             font-size: 0.40540540540540543rem;
+                             line-height: 0.5405405405405406rem;
+                             color: #1f1f1f;
+                        }
+                         .des{
+                             font-size: 0.3783783783783784rem;
+                             line-height: 0.972972972972973rem;
+                             color: #666666;
+                             .textIndex1(7.4324324324324325rem);
+                        }
+                         .prices{
+                             width: 100%;
+                             .nowPrice{
+                                 font-size: 0.3783783783783784rem;
+                                 line-height: 0.5405405405405406rem;
+                                 color: #fa2802;
+                            }
+                             .oldPrice{
+                                 font-size: 0.35135135135135137rem;
+                                 line-height: 0.5405405405405406rem;
+                                 color: #b2b2b2;
+                                 text-decoration: line-through;
+                            }
+                             .bug{
+                                 float: right;
+                                 padding: 1px 0.21621621621621623rem;
+                                 font-size: 0.32432432432432434rem;
+                                 line-height: 0.5405405405405406rem;
+                                 color: #fa2802;
+                                 background-color: #ffffff;
+                                 border-radius: 0.5405405405405406rem;
+                                 background-color: #f4f4f4;
+                                 border: solid 1px #fa2802;
+                            }
+                        }
+                    }
+                }
+            }
+             //标签和频道 
+             .labelsAndchannel{
+                 margin-top: 0.2702702702702703rem;
+                 padding: 0.40540540540540543rem 0.32432432432432434rem;
+                 width: 100%;
+                 background-color: #ffffff;
+                 .lables{
+                     width: 100%;
+                     padding: 1px;
+                     overflow: hidden;
+                     span{
+                         display: block;
+                         float: left;
+                         margin: 0 0.40540540540540543rem 0.2702702702702703rem 0;
+                         padding: 0.13513513513513514rem 0.2702702702702703rem;
+                         font-size: 0.40540540540540543rem;
+                         color: #333333;
+                         border-radius: 0.8108108108108109rem;
+                         border: solid 1px #999999;
+                    }
+                }
+                 .channel{
+                     position: relative;
+                     padding: 0 0.40540540540540543rem;
+                     width: 100%;
+                     height: 1.8918918918918919rem;
+                     background-color: #f4f4f4;
+                     h3{
+                         font-size: 0.40540540540540543rem;
+                         line-height: 1.0810810810810811rem;
+                         color: #1f1f1f;
+                    }
+                     .des{
+                         font-size: 0.3783783783783784rem;
+                         line-height: 0.5405405405405406rem;
+                         color: #666666;
+                    }
+                     .goChannel{
+                         position: absolute;
+                         right: 0.2702702702702703rem;
+                         bottom: 0.2702702702702703rem;
+                         padding: 1px 0.2702702702702703rem;
+                         border-radius: 0.5405405405405406rem;
+                         border: solid 1px #999999;
+                         font-size: 0.32432432432432434rem;
+                         line-height: 0.5405405405405406rem;
+                         color: #333333;
+                    }
+                }
+            }
+             //有关评论 .ofComment{
+                 margin-top: 0.2702702702702703rem;
+                 width: 100%;
+                 background-color: #ffffff;
+                 .title{
+                     padding: 0 0.2702702702702703rem;
+                     width: 100%;
+                     height: 1.2162162162162162rem;
+                     font-size: 0.40540540540540543rem;
+                     line-height: 1.2162162162162162rem;
+                     color: #333333;
+                     border-bottom: solid 1px #ebe5e1;
+                }
+                 .noHaveComment{
+                     width: 100%;
+                     height: 2.7027027027027026rem;
+                     text-align: center;
+                     line-height: 2.7027027027027026rem;
+                     background-color: #ffffff;
+                     font-size: 0.3783783783783784rem;
+                     color: #999999;
+                }
+                 .commentList{
+                     width: 100%;
+                     li{
+                         border-bottom: solid 1px #ebe5e1;
+                         .titles{
+                             margin-top: 0.40540540540540543rem;
+                             padding: 0 0.2702702702702703rem;
+                             position: relative;
+                             width: 100%;
+                             height: 0.8108108108108109rem;
+                             .portrait{
+                                 width: 0.8108108108108109rem;
+                                 height: 0.8108108108108109rem;
+                                 border-radius: 50%;
+                                 vertical-align: middle;
+                            }
+                             .userName{
+                                 margin-left: 0.2702702702702703rem;
+                                 font-size: 0.40540540540540543rem;
+                            }
+                             .time{
+                                 position: absolute;
+                                 top: 0.13513513513513514rem;
+                                 right: 0.2702702702702703rem;
+                                 font-size: 0.32432432432432434rem;
+                                 color: #999999;
+                            }
+                        }
+                         .comContent{
+                             //padding-left: 0.9459459459459459rem;
+                             padding: 0.2702702702702703rem 0 0.2702702702702703rem 1.3513513513513513rem;
+                             font-size: 0.3783783783783784rem;
+                             line-height: 0.5405405405405406rem;
+                             color: #1f1f1f;
+                        }
+                         .customerReply{
+                             padding: 0.43243243243243246rem 0.2702702702702703rem;
+                             line-height: 1.2;
+                             //min-height: 1.2162162162162162rem;
+                             //line-height: 1.0810810810810811rem;
+                             font-size: 0.3783783783783784rem;
+                             background-color: #f5f5f5;
+                             .customer{
+                                 color: #fa2802;
+                            }
+                             .reply{
+                                 color: #666666;
+                            }
+                        }
+                    }
+                     .moreComment{
+                         width: 100%;
+                         height: 0.9459459459459459rem;
+                         line-height: 0.9459459459459459rem;
+                         text-align: center;
+                         background-color: #ffffff;
+                         font-size: 0.3783783783783784rem;
+                         color: #30a1f8;
+                    }
+                }
+            }
+        }
+    }
+     .noMOre{
+         margin-bottom: 1.2162162162162162rem;
+         width: 100%;
+         height: 1.2162162162162162rem;
+         text-align: center;
+         line-height: 1.2162162162162162rem;
+         font-size: 0.2972972972972973rem;
+         color: #b2b2b2;
+         background-color: #f4f4f4;
+    }
+     //底部评论 
+     .foot{
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         height: 1.2162162162162162rem;
+         line-height: 1.2162162162162162rem;
+         background-color: #ffffff;
+         box-shadow: inset 0rem 1px 0rem 0rem #d9d9d9;
+         img{
+             width: 0.5405405405405406rem;
+             height: 0.5405405405405406rem;
+             vertical-align: middle;
+        }
+         .inpuntBox{
+             position: relative;
+             display: inline-block;
+             margin: 0 0.5405405405405406rem 0 0.40540540540540543rem;
+             vertical-align: middle;
+             width: 7.027027027027027rem;
+             height: 0.8648648648648649rem;
+             border-radius: 0.43243243243243246rem;
+             border: solid 1px #e8e8e8;
+             overflow: hidden;
+             input{
+                 width: 100%;
+                 padding-left: 0.2702702702702703rem;
+                 padding-right: 0.8108108108108109rem;
+                 position: absolute;
+                 top: 0;
+                 left: 0;
+                 height: 0.8648648648648649rem;
+                 background-color: #f4f5f6;
+                 border-radius: 0.43243243243243246rem;
+            }
+             .bqIcon{
+                 position: absolute;
+                 right: 0.16216216216216217rem;
+                 top: 0.13513513513513514rem;
+                 z-index: 5 
+            }
+        }
+         .zan{
+             margin-right: 0.40540540540540543rem;
+        }
+         span{
+             font-size: 0.40540540540540543rem;
+             color: #666666;
+        }
+    }
+// }
+ //兼容iPhone5 
+ @media screen and (max-width:8.64864864864865rem){
+     #moveNewDetails .scrollerWrap .scroller .ofProduct .proDuct .desList{
+         width: 9.5rem;
+    }
+     #moveNewDetails .scrollerWrap .scroller .labelsAndchannel .channel .des{
+         line-height: 0.1891891891891892rem;
+    }
+     #moveNewDetails .scrollerWrap .scroller .labelsAndchannel .channel h3{
+         height: 1.027027027027027rem;
+    }
+}
+ 

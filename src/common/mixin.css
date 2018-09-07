@@ -1,0 +1,145 @@
+.c {
+  background: red;
+}
+a {
+  text-decoration: none;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden;
+  overflow: hidden;
+}
+.font9 {
+  font-size: 0.32432432432432434rem;
+  display: inline-block;
+  transform: scale(0.75);
+}
+.font10 {
+  font-size: 0.32432432432432434rem;
+  display: inline-block;
+  transform: scale(0.83333);
+}
+.font11 {
+  font-size: 0.32432432432432434rem;
+  display: inline-block;
+  transform: scale(0.91666);
+}
+.cf0 {
+  color: #000;
+}
+.cff8 {
+  color: #30A1F8;
+}
+.cDefault {
+  color: #000;
+}
+.cf3 {
+  color: #333;
+}
+.cf9 {
+  color: #999;
+}
+.cff {
+  color: #FFF;
+}
+.cf6 {
+  color: #666666;
+}
+.cf1F {
+  color: #1F1F1F;
+}
+.cf8C {
+  color: #8C8C8C;
+}
+.cfB2 {
+  color: #B2B2B2;
+}
+.cf802 {
+  color: #FA2802;
+}
+.fs38 {
+  font-size: 38px;
+}
+.1f8 {
+  color: #30A1F8;
+}
+.fs9 {
+  font-size: 0.2702702702702703rem;
+  display: inline-block;
+  transform: scale(0.81);
+}
+.fs32 {
+  font-size: 1.027027027027027rem;
+}
+.fs15 {
+  font-size: 0.40540540540540543rem;
+}
+.fs13 {
+  font-size: 0.35135135135135137rem;
+}
+.fs11 {
+  -webkit-transform: scale(0.9);
+  font-size: 0.2972972972972973rem;
+}
+.fs12 {
+  font-size: 0.32432432432432434rem;
+}
+.fs16 {
+  font-size: 0.43243243243243246rem;
+}
+.themeC {
+  color: #ff6b5f;
+}
+.cf45 {
+  color: #45B0DA  ;
+}
+#LRMINIBar {
+  width: 0.40540540540540543rem;
+  height: 0.40540540540540543rem;
+  right: 0.6756756756756757rem !important;
+  bottom: 96% !important;
+}
+#LR-BTN {
+  border: none !important;
+  width: 0.5405405405405406rem !important;
+  height: 0.40540540540540543rem !important;
+  border-radius: 0.40540540540540543rem 0.40540540540540543rem 0.40540540540540543rem 0.13513513513513514rem !important;
+  transform: rotate(-14deg);
+  background: transparent !important;
+}
+#LR-BTN-ICON {
+  margin: - 1px 0rem 0rem -0.05405405rem !important;
+  transform: rotate(14deg);
+  background-image: url(../../src/assets/images/tabBar/messageNewS@3x.png) !important;
+  background-size: 0.7027027027027027rem !important;
+}
+#LR-CIRCLE {
+  top: 0rem !important;
+  font-size: 0.32432432432432434rem !important;
+  line-height: 0.40540540540540543rem !important;
+  background: red !important;
+  left: 0.4864864864864865rem !important;
+  border: none !important;
+  width: 0.40540540540540543rem !important;
+  height: 0.40540540540540543rem !important;
+  transform: rotate(13deg);
+}
+#LRMINIBar #LR-BUBBLE {
+  display: none !important;
+}
+#LRdiv0 #LR-BUBBLE {
+  display: none !important;
+}
+#LRfloater0 {
+  display: none !important;
+}
+#LRdiv2 {
+  border: 1px  solid red;
+}
+#headerBox {
+  display: none;
+}
